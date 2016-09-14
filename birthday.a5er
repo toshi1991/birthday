@@ -1,0 +1,219 @@
+﻿# A5:ER FORMAT:10
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  http://www.wind.sannet.ne.jp/m_matsu/developer/a5m2/
+
+[Manager]
+ProjectName=Birthday
+Author=ToshihitoIha
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=5
+RDBMSTypeName=MySQL
+GenerateDropTableStatement=1
+DropTableIfExists=1
+ForceQuoteIdentifier=1
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+ShowCommonAttributes=0
+
+[Relation]
+Entity1=messages
+Entity2=movies
+RelationType1=2
+RelationType2=3
+Fields1=id
+Fields2=message_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,961,3017,2740,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=96
+Bar2=302
+Bar3=274
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=messages
+Entity2=images
+RelationType1=2
+RelationType2=3
+Fields1=id
+Fields2=message_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,961,4520,2698,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=96
+Bar2=452
+Bar3=270
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=users
+Entity2=messages
+RelationType1=1
+RelationType2=3
+Fields1=id
+Fields2=user_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,756,6900,2553,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=76
+Bar2=690
+Bar3=255
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=services
+Entity2=users
+RelationType1=1
+RelationType2=3
+Fields1=id
+Fields2=service_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,865,5143,3123,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20160909122342
+LineMode=0
+Bar1=86
+Bar2=514
+Bar3=312
+TermPos1=R
+TermPos2=R
+
+[Entity]
+PName=movies
+LName=動画
+Comment=
+TableOption=
+Page=MAIN
+Left=800
+Top=300
+Field="動画ID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="メッセージID","message_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="パス","path","@VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日時","created","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","modified","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="削除フラグ","del_flg","@INT","NOT NULL",,"0","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20160914132828
+Position="MAIN",800,300
+
+[Entity]
+PName=images
+LName=画像
+Comment=
+TableOption=
+Page=MAIN
+Left=800
+Top=100
+Field="画像ID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="メッセージID","message_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="画像パス","path","@VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日時","created","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","modified","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="削除フラグ","del_flg","@INT","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20160914132852
+Position="MAIN",800,100
+
+[Entity]
+PName=messages
+LName=メッセージ
+Comment=
+TableOption=
+Page=MAIN
+Left=500
+Top=100
+Field="メッセージID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ユーザーID","user_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="メッセージ","comment","TEXT",,,"","",$FFFFFFFF,""
+Field="作成日","craeted","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日","modified","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="削除フラグ","del_flg","@INT","NOT NULL",,"0","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20160914133405
+Position="MAIN",500,100
+
+[Entity]
+PName=services
+LName=SNS
+Comment=
+TableOption=
+Page=MAIN
+Left=350
+Top=200
+Field="SNSID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="SNS名称","sns_name","@VARCHAR(255)",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20160914185559
+Position="MAIN",350,200
+
+[Entity]
+PName=users
+LName=ユーザー
+Comment=
+TableOption=
+Page=MAIN
+Left=100
+Top=100
+Field="ユーザーID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ユーザー名","user_name","@VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="連携SNSID","service_id","@INT",,,"","",$FFFFFFFF,""
+Field="SNSユーザーID","sns_user_name","@INT",,,"","",$FFFFFFFF,""
+Field="作成日","created","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","modified","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="削除フラグ","del_flg","@INT","NOT NULL",,"0","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20160914152322
+Position="MAIN",100,100,174,203
