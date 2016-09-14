@@ -1,0 +1,495 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2016-09-14 05:47+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/ImagesController.php:58;85
+msgid "The image has been saved."
+msgstr ""
+
+#: Controller/ImagesController.php:62;89
+msgid "The image could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ImagesController.php:109
+msgid "The image has been deleted."
+msgstr ""
+
+#: Controller/ImagesController.php:111
+msgid "The image could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MessagesController.php:58;85
+msgid "The message has been saved."
+msgstr ""
+
+#: Controller/MessagesController.php:62;89
+msgid "The message could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MessagesController.php:109
+msgid "The message has been deleted."
+msgstr ""
+
+#: Controller/MessagesController.php:111
+msgid "The message could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MoviesController.php:58;85
+msgid "The movie has been saved."
+msgstr ""
+
+#: Controller/MoviesController.php:62;89
+msgid "The movie could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MoviesController.php:109
+msgid "The movie has been deleted."
+msgstr ""
+
+#: Controller/MoviesController.php:111
+msgid "The movie could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/SnsController.php:55;81
+msgid "The sn has been saved."
+msgstr ""
+
+#: Controller/SnsController.php:59;85
+msgid "The sn could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/SnsController.php:104
+msgid "The sn has been deleted."
+msgstr ""
+
+#: Controller/SnsController.php:106
+msgid "The sn could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:58;85
+msgid "The user has been saved."
+msgstr ""
+
+#: Controller/UsersController.php:62;89
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:109
+msgid "The user has been deleted."
+msgstr ""
+
+#: Controller/UsersController.php:111
+msgid "The user could not be deleted. Please, try again."
+msgstr ""
+
+#: Template/Images/add.ctp:3
+#: Template/Images/edit.ctp:3
+#: Template/Images/index.ctp:3;20
+#: Template/Images/view.ctp:3
+#: Template/Messages/add.ctp:3
+#: Template/Messages/edit.ctp:3
+#: Template/Messages/index.ctp:3;23
+#: Template/Messages/view.ctp:3;55;86
+#: Template/Movies/add.ctp:3
+#: Template/Movies/edit.ctp:3
+#: Template/Movies/index.ctp:3;20
+#: Template/Movies/view.ctp:3
+#: Template/Sns/add.ctp:3
+#: Template/Sns/edit.ctp:3
+#: Template/Sns/index.ctp:3;14
+#: Template/Sns/view.ctp:3
+#: Template/Users/add.ctp:3
+#: Template/Users/edit.ctp:3
+#: Template/Users/index.ctp:3;23
+#: Template/Users/view.ctp:3;57
+msgid "Actions"
+msgstr ""
+
+#: Template/Images/add.ctp:4
+#: Template/Images/edit.ctp:10
+#: Template/Images/view.ctp:6
+#: Template/Messages/add.ctp:7
+#: Template/Messages/edit.ctp:13
+#: Template/Messages/index.ctp:7
+#: Template/Messages/view.ctp:10
+msgid "List Images"
+msgstr ""
+
+#: Template/Images/add.ctp:5
+#: Template/Images/edit.ctp:11
+#: Template/Images/index.ctp:5
+#: Template/Images/view.ctp:8
+#: Template/Messages/add.ctp:4
+#: Template/Messages/edit.ctp:10
+#: Template/Messages/view.ctp:6
+#: Template/Movies/add.ctp:5
+#: Template/Movies/edit.ctp:11
+#: Template/Movies/index.ctp:5
+#: Template/Movies/view.ctp:8
+#: Template/Users/add.ctp:7
+#: Template/Users/edit.ctp:13
+#: Template/Users/index.ctp:7
+#: Template/Users/view.ctp:10
+msgid "List Messages"
+msgstr ""
+
+#: Template/Images/add.ctp:6
+#: Template/Images/edit.ctp:12
+#: Template/Images/index.ctp:6
+#: Template/Images/view.ctp:9
+#: Template/Messages/index.ctp:4
+#: Template/Messages/view.ctp:7
+#: Template/Movies/add.ctp:6
+#: Template/Movies/edit.ctp:12
+#: Template/Movies/index.ctp:6
+#: Template/Movies/view.ctp:9
+#: Template/Users/add.ctp:8
+#: Template/Users/edit.ctp:14
+#: Template/Users/index.ctp:8
+#: Template/Users/view.ctp:11
+msgid "New Message"
+msgstr ""
+
+#: Template/Images/add.ctp:12
+msgid "Add Image"
+msgstr ""
+
+#: Template/Images/add.ctp:19
+#: Template/Images/edit.ctp:25
+#: Template/Messages/add.ctp:24
+#: Template/Messages/edit.ctp:30
+#: Template/Movies/add.ctp:19
+#: Template/Movies/edit.ctp:25
+#: Template/Sns/add.ctp:15
+#: Template/Sns/edit.ctp:21
+#: Template/Users/add.ctp:22
+#: Template/Users/edit.ctp:28
+msgid "Submit"
+msgstr ""
+
+#: Template/Images/edit.ctp:5
+#: Template/Images/index.ctp:35
+#: Template/Messages/edit.ctp:5
+#: Template/Messages/index.ctp:37
+#: Template/Messages/view.ctp:68;99
+#: Template/Movies/edit.ctp:5
+#: Template/Movies/index.ctp:35
+#: Template/Sns/edit.ctp:5
+#: Template/Sns/index.ctp:25
+#: Template/Users/edit.ctp:5
+#: Template/Users/index.ctp:39
+#: Template/Users/view.ctp:70
+msgid "Delete"
+msgstr ""
+
+#: Template/Images/edit.ctp:7
+#: Template/Images/index.ctp:35
+#: Template/Images/view.ctp:5
+#: Template/Messages/edit.ctp:7
+#: Template/Messages/index.ctp:37
+#: Template/Messages/view.ctp:5;68;99
+#: Template/Movies/edit.ctp:7
+#: Template/Movies/index.ctp:35
+#: Template/Movies/view.ctp:5
+#: Template/Sns/edit.ctp:7
+#: Template/Sns/index.ctp:25
+#: Template/Sns/view.ctp:5
+#: Template/Users/edit.ctp:7
+#: Template/Users/index.ctp:39
+#: Template/Users/view.ctp:5;70
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/Images/edit.ctp:18
+#: Template/Images/view.ctp:4
+msgid "Edit Image"
+msgstr ""
+
+#: Template/Images/index.ctp:4
+#: Template/Images/view.ctp:7
+#: Template/Messages/add.ctp:8
+#: Template/Messages/edit.ctp:14
+#: Template/Messages/index.ctp:8
+#: Template/Messages/view.ctp:11
+msgid "New Image"
+msgstr ""
+
+#: Template/Images/index.ctp:10
+msgid "Images"
+msgstr ""
+
+#: Template/Images/index.ctp:33
+#: Template/Messages/index.ctp:35
+#: Template/Messages/view.ctp:66;97
+#: Template/Movies/index.ctp:33
+#: Template/Sns/index.ctp:23
+#: Template/Users/index.ctp:37
+#: Template/Users/view.ctp:68
+msgid "View"
+msgstr ""
+
+#: Template/Images/index.ctp:34
+#: Template/Messages/index.ctp:36
+#: Template/Messages/view.ctp:67;98
+#: Template/Movies/index.ctp:34
+#: Template/Sns/index.ctp:24
+#: Template/Users/index.ctp:38
+#: Template/Users/view.ctp:69
+msgid "Edit"
+msgstr ""
+
+#: Template/Images/index.ctp:43
+#: Template/Messages/index.ctp:45
+#: Template/Movies/index.ctp:43
+#: Template/Sns/index.ctp:33
+#: Template/Users/index.ctp:47
+msgid "previous"
+msgstr ""
+
+#: Template/Images/index.ctp:45
+#: Template/Messages/index.ctp:47
+#: Template/Movies/index.ctp:45
+#: Template/Sns/index.ctp:35
+#: Template/Users/index.ctp:49
+msgid "next"
+msgstr ""
+
+#: Template/Images/view.ctp:5
+msgid "Delete Image"
+msgstr ""
+
+#: Template/Images/view.ctp:16
+#: Template/Movies/view.ctp:16
+msgid "Message"
+msgstr ""
+
+#: Template/Images/view.ctp:20
+#: Template/Messages/view.ctp:51;82
+#: Template/Movies/view.ctp:20
+msgid "Path"
+msgstr ""
+
+#: Template/Images/view.ctp:24
+#: Template/Messages/view.ctp:24;49;80
+#: Template/Movies/view.ctp:24
+#: Template/Sns/view.ctp:18
+#: Template/Users/view.ctp:26;51
+msgid "Id"
+msgstr ""
+
+#: Template/Images/view.ctp:28
+#: Template/Messages/view.ctp:28;54;85
+#: Template/Movies/view.ctp:28
+#: Template/Users/view.ctp:34;56
+msgid "Del Flg"
+msgstr ""
+
+#: Template/Images/view.ctp:32
+#: Template/Messages/view.ctp:52;83
+#: Template/Movies/view.ctp:32
+#: Template/Users/view.ctp:38
+msgid "Created"
+msgstr ""
+
+#: Template/Images/view.ctp:36
+#: Template/Messages/view.ctp:36;53;84
+#: Template/Movies/view.ctp:36
+#: Template/Users/view.ctp:42;55
+msgid "Modified"
+msgstr ""
+
+#: Template/Layout/error.ctp:35
+msgid "Error"
+msgstr ""
+
+#: Template/Layout/error.ctp:43
+msgid "Back"
+msgstr ""
+
+#: Template/Messages/add.ctp:5
+#: Template/Messages/edit.ctp:11
+#: Template/Messages/index.ctp:5
+#: Template/Messages/view.ctp:8
+#: Template/Users/add.ctp:4
+#: Template/Users/edit.ctp:10
+#: Template/Users/view.ctp:6
+msgid "List Users"
+msgstr ""
+
+#: Template/Messages/add.ctp:6
+#: Template/Messages/edit.ctp:12
+#: Template/Messages/index.ctp:6
+#: Template/Messages/view.ctp:9
+#: Template/Users/index.ctp:4
+#: Template/Users/view.ctp:7
+msgid "New User"
+msgstr ""
+
+#: Template/Messages/add.ctp:9
+#: Template/Messages/edit.ctp:15
+#: Template/Messages/index.ctp:9
+#: Template/Messages/view.ctp:12
+#: Template/Movies/add.ctp:4
+#: Template/Movies/edit.ctp:10
+#: Template/Movies/view.ctp:6
+msgid "List Movies"
+msgstr ""
+
+#: Template/Messages/add.ctp:10
+#: Template/Messages/edit.ctp:16
+#: Template/Messages/index.ctp:10
+#: Template/Messages/view.ctp:13
+#: Template/Movies/index.ctp:4
+#: Template/Movies/view.ctp:7
+msgid "New Movie"
+msgstr ""
+
+#: Template/Messages/add.ctp:16
+msgid "Add Message"
+msgstr ""
+
+#: Template/Messages/edit.ctp:22
+#: Template/Messages/view.ctp:4
+msgid "Edit Message"
+msgstr ""
+
+#: Template/Messages/index.ctp:14
+msgid "Messages"
+msgstr ""
+
+#: Template/Messages/view.ctp:5
+msgid "Delete Message"
+msgstr ""
+
+#: Template/Messages/view.ctp:20
+msgid "User"
+msgstr ""
+
+#: Template/Messages/view.ctp:32
+#: Template/Users/view.ctp:54
+msgid "Craeted"
+msgstr ""
+
+#: Template/Messages/view.ctp:41
+#: Template/Users/view.ctp:53
+msgid "Comment"
+msgstr ""
+
+#: Template/Messages/view.ctp:45
+msgid "Related Images"
+msgstr ""
+
+#: Template/Messages/view.ctp:50;81
+msgid "Message Id"
+msgstr ""
+
+#: Template/Messages/view.ctp:76
+msgid "Related Movies"
+msgstr ""
+
+#: Template/Movies/add.ctp:12
+msgid "Add Movie"
+msgstr ""
+
+#: Template/Movies/edit.ctp:18
+#: Template/Movies/view.ctp:4
+msgid "Edit Movie"
+msgstr ""
+
+#: Template/Movies/index.ctp:10
+msgid "Movies"
+msgstr ""
+
+#: Template/Movies/view.ctp:5
+msgid "Delete Movie"
+msgstr ""
+
+#: Template/Sns/add.ctp:4
+#: Template/Sns/edit.ctp:10
+#: Template/Sns/view.ctp:6
+#: Template/Users/add.ctp:5
+#: Template/Users/edit.ctp:11
+#: Template/Users/index.ctp:5
+#: Template/Users/view.ctp:8
+msgid "List Sns"
+msgstr ""
+
+#: Template/Sns/add.ctp:10
+msgid "Add Sn"
+msgstr ""
+
+#: Template/Sns/edit.ctp:16
+#: Template/Sns/view.ctp:4
+msgid "Edit Sn"
+msgstr ""
+
+#: Template/Sns/index.ctp:4
+#: Template/Sns/view.ctp:7
+#: Template/Users/add.ctp:6
+#: Template/Users/edit.ctp:12
+#: Template/Users/index.ctp:6
+#: Template/Users/view.ctp:9
+msgid "New Sn"
+msgstr ""
+
+#: Template/Sns/index.ctp:8
+msgid "Sns"
+msgstr ""
+
+#: Template/Sns/view.ctp:5
+msgid "Delete Sn"
+msgstr ""
+
+#: Template/Sns/view.ctp:14
+msgid "Sns Name"
+msgstr ""
+
+#: Template/Users/add.ctp:14
+msgid "Add User"
+msgstr ""
+
+#: Template/Users/edit.ctp:20
+#: Template/Users/view.ctp:4
+msgid "Edit User"
+msgstr ""
+
+#: Template/Users/index.ctp:12
+msgid "Users"
+msgstr "ユーザー"
+
+#: Template/Users/view.ctp:5
+msgid "Delete User"
+msgstr ""
+
+#: Template/Users/view.ctp:18
+msgid "User Name"
+msgstr ""
+
+#: Template/Users/view.ctp:22
+msgid "Sn"
+msgstr ""
+
+#: Template/Users/view.ctp:30
+msgid "Sns User Name"
+msgstr ""
+
+#: Template/Users/view.ctp:47
+msgid "Related Messages"
+msgstr ""
+
+#: Template/Users/view.ctp:52
+msgid "User Id"
+msgstr ""
+
