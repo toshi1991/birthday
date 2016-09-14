@@ -467,7 +467,7 @@ msgstr ""
 
 #: Template/Users/index.ctp:12
 msgid "Users"
-msgstr ""
+msgstr "ユーザー"
 
 #: Template/Users/view.ctp:5
 msgid "Delete User"
