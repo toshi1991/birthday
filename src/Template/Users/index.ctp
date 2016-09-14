@@ -2,8 +2,8 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Sns'), ['controller' => 'Sns', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Sn'), ['controller' => 'Sns', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Services'), ['controller' => 'Services', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Service'), ['controller' => 'Services', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Messages'), ['controller' => 'Messages', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Message'), ['controller' => 'Messages', 'action' => 'add']) ?></li>
     </ul>
@@ -15,7 +15,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('user_name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('sns_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('service_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('sns_user_name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
@@ -28,7 +28,7 @@
             <tr>
                 <td><?= $this->Number->format($user->id) ?></td>
                 <td><?= h($user->user_name) ?></td>
-                <td><?= $user->has('sn') ? $this->Html->link($user->sn->id, ['controller' => 'Sns', 'action' => 'view', $user->sn->id]) : '' ?></td>
+                <td><?= $user->has('service') ? $this->Html->link($user->service->id, ['controller' => 'Services', 'action' => 'view', $user->service->id]) : '' ?></td>
                 <td><?= $this->Number->format($user->sns_user_name) ?></td>
                 <td><?= h($user->created) ?></td>
                 <td><?= h($user->modified) ?></td>

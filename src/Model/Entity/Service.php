@@ -4,12 +4,14 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Sn Entity
+ * Service Entity
  *
  * @property int $id
  * @property string $sns_name
+ *
+ * @property \App\Model\Entity\User[] $users
  */
-class Sn extends Entity
+class Service extends Entity
 {
 
     /**

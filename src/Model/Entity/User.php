@@ -8,13 +8,13 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $user_name
- * @property int $sns_id
+ * @property int $service_id
  * @property int $sns_user_name
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  * @property int $del_flg
  *
- * @property \App\Model\Entity\Sn $sn
+ * @property \App\Model\Entity\Service $service
  * @property \App\Model\Entity\Message[] $messages
  */
 class User extends Entity

@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\MessagesTable;
+use App\Model\Table\ServicesTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\MessagesTable Test Case
+ * App\Model\Table\ServicesTable Test Case
  */
-class MessagesTableTest extends TestCase
+class ServicesTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\MessagesTable
+     * @var \App\Model\Table\ServicesTable
      */
-    public $Messages;
+    public $Services;
 
     /**
      * Fixtures
@@ -24,9 +24,9 @@ class MessagesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.messages',
+        'app.services',
         'app.users',
-        'app.sns',
+        'app.messages',
         'app.images',
         'app.movies'
     ];
@@ -39,8 +39,8 @@ class MessagesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Messages') ? [] : ['className' => 'App\Model\Table\MessagesTable'];
-        $this->Messages = TableRegistry::get('Messages', $config);
+        $config = TableRegistry::exists('Services') ? [] : ['className' => 'App\Model\Table\ServicesTable'];
+        $this->Services = TableRegistry::get('Services', $config);
     }
 
     /**
@@ -50,7 +50,7 @@ class MessagesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Messages);
+        unset($this->Services);
 
         parent::tearDown();
     }
@@ -71,16 +71,6 @@ class MessagesTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     */
-    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

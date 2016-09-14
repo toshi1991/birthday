@@ -5,8 +5,8 @@
         <li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Sns'), ['controller' => 'Sns', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Sn'), ['controller' => 'Sns', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Services'), ['controller' => 'Services', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Service'), ['controller' => 'Services', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Messages'), ['controller' => 'Messages', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Message'), ['controller' => 'Messages', 'action' => 'add']) ?> </li>
     </ul>
@@ -19,8 +19,8 @@
             <td><?= h($user->user_name) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Sn') ?></th>
-            <td><?= $user->has('sn') ? $this->Html->link($user->sn->id, ['controller' => 'Sns', 'action' => 'view', $user->sn->id]) : '' ?></td>
+            <th scope="row"><?= __('Service') ?></th>
+            <td><?= $user->has('service') ? $this->Html->link($user->service->id, ['controller' => 'Services', 'action' => 'view', $user->service->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

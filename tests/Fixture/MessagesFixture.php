@@ -43,8 +43,8 @@ class MessagesFixture extends TestFixture
             'id' => 1,
             'user_id' => 1,
             'comment' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
-            'craeted' => '2016-09-14 05:00:51',
-            'modified' => '2016-09-14 05:00:51',
+            'craeted' => '2016-09-14 09:56:42',
+            'modified' => '2016-09-14 09:56:42',
             'del_flg' => 1
         ],
     ];
