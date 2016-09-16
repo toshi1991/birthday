@@ -11,6 +11,7 @@ MaxEntityRowShow=1000
 ReadOnlyRecommend=0
 Page=Main
 PageInfo="Main",2,"A3Landscape",$FFFFFF
+Domain=ID=INT unsigned auto_increment
 LogicalView=1
 DecodeDomain=0
 ViewModePageIndividually=1
@@ -129,7 +130,7 @@ TableOption=
 Page=MAIN
 Left=800
 Top=300
-Field="動画ID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="動画ID","id","*ID","NOT NULL",0,"","",$FFFFFFFF,""
 Field="メッセージID","message_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
 Field="パス","path","@VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
 Field="作成日時","created","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
@@ -138,7 +139,7 @@ Field="削除フラグ","del_flg","@INT","NOT NULL",,"0","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20160914132828
+ModifiedDateTime=20160916113437
 Position="MAIN",800,300
 
 [Entity]
@@ -149,7 +150,7 @@ TableOption=
 Page=MAIN
 Left=800
 Top=100
-Field="画像ID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="画像ID","id","*ID","NOT NULL",0,"","",$FFFFFFFF,""
 Field="メッセージID","message_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
 Field="画像パス","path","@VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
 Field="作成日時","created","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
@@ -158,7 +159,7 @@ Field="削除フラグ","del_flg","@INT","NOT NULL",,"","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20160914132852
+ModifiedDateTime=20160916113420
 Position="MAIN",800,100
 
 [Entity]
@@ -169,16 +170,16 @@ TableOption=
 Page=MAIN
 Left=500
 Top=100
-Field="メッセージID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="メッセージID","id","*ID","NOT NULL",0,"","",$FFFFFFFF,""
 Field="ユーザーID","user_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
 Field="メッセージ","comment","TEXT",,,"","",$FFFFFFFF,""
-Field="作成日","craeted","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日","created","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
 Field="更新日","modified","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
 Field="削除フラグ","del_flg","@INT","NOT NULL",,"0","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20160914133405
+ModifiedDateTime=20160916125218
 Position="MAIN",500,100
 
 [Entity]
@@ -189,12 +190,12 @@ TableOption=
 Page=MAIN
 Left=350
 Top=200
-Field="SNSID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="SNSID","id","*ID","NOT NULL",0,"","",$FFFFFFFF,""
 Field="SNS名称","sns_name","@VARCHAR(255)",,,"","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20160914185559
+ModifiedDateTime=20160916113401
 Position="MAIN",350,200
 
 [Entity]
@@ -205,8 +206,9 @@ TableOption=
 Page=MAIN
 Left=100
 Top=100
-Field="ユーザーID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ユーザーID","id","*ID","NOT NULL",0,"","",$FFFFFFFF,""
 Field="ユーザー名","user_name","@VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="パスワード","password","@VARCHAR(32)",,,"","",$FFFFFFFF,""
 Field="連携SNSID","service_id","@INT",,,"","",$FFFFFFFF,""
 Field="SNSユーザーID","sns_user_name","@INT",,,"","",$FFFFFFFF,""
 Field="作成日","created","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
@@ -215,5 +217,5 @@ Field="削除フラグ","del_flg","@INT","NOT NULL",,"0","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20160914152322
+ModifiedDateTime=20160916113350
 Position="MAIN",100,100,174,203

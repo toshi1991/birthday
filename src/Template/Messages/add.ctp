@@ -15,10 +15,8 @@
     <fieldset>
         <legend><?= __('Add Message') ?></legend>
         <?php
-            echo $this->Form->input('user_id', ['options' => $users]);
+            echo $this->Form->input('user_id', ['type' => 'hidden', 'value' => 1]);
             echo $this->Form->input('comment');
-            echo $this->Form->input('craeted');
-            echo $this->Form->input('del_flg');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

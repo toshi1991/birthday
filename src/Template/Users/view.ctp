@@ -19,6 +19,10 @@
             <td><?= h($user->user_name) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Password') ?></th>
+            <td><?= h($user->password) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Service') ?></th>
             <td><?= $user->has('service') ? $this->Html->link($user->service->id, ['controller' => 'Services', 'action' => 'view', $user->service->id]) : '' ?></td>
         </tr>

@@ -68,16 +68,9 @@ class MessagesTable extends Table
 
         $validator
             ->allowEmpty('comment');
-
+			
         $validator
-            ->dateTime('craeted')
-            ->requirePresence('craeted', 'create')
-            ->notEmpty('craeted');
-
-        $validator
-            ->integer('del_flg')
-            ->requirePresence('del_flg', 'create')
-            ->notEmpty('del_flg');
+            ->integer('del_flg');
 
         return $validator;
     }

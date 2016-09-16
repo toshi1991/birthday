@@ -66,6 +66,9 @@ class UsersTable extends Table
             ->notEmpty('user_name');
 
         $validator
+            ->allowEmpty('password');
+
+        $validator
             ->integer('sns_user_name')
             ->allowEmpty('sns_user_name');
 

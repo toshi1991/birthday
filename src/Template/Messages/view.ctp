@@ -14,27 +14,15 @@
     </ul>
 </nav>
 <div class="messages view large-9 medium-8 columns content">
-    <h3><?= h($message->id) ?></h3>
+    <h3><?= __('Message') ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('User') ?></th>
-            <td><?= $message->has('user') ? $this->Html->link($message->user->id, ['controller' => 'Users', 'action' => 'view', $message->user->id]) : '' ?></td>
+            <td><?= $message->has('user') ? $message->user->user_name : ""; ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($message->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Del Flg') ?></th>
-            <td><?= $this->Number->format($message->del_flg) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Craeted') ?></th>
-            <td><?= h($message->craeted) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Modified') ?></th>
-            <td><?= h($message->modified) ?></td>
+            <th scope="row"><?= __('Created') ?></th>
+            <td><?= h($message->created) ?></td>
         </tr>
     </table>
     <div class="row">

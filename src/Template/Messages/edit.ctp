@@ -23,7 +23,6 @@
         <?php
             echo $this->Form->input('user_id', ['options' => $users]);
             echo $this->Form->input('comment');
-            echo $this->Form->input('craeted');
             echo $this->Form->input('del_flg');
         ?>
     </fieldset>

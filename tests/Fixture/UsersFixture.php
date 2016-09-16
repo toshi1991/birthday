@@ -17,8 +17,9 @@ class UsersFixture extends TestFixture
      */
     // @codingStandardsIgnoreStart
     public $fields = [
-        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => 'ユーザーID', 'precision' => null, 'autoIncrement' => null],
+        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => 'ユーザーID', 'autoIncrement' => true, 'precision' => null],
         'user_name' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => 'ユーザー名', 'precision' => null, 'fixed' => null],
+        'password' => ['type' => 'string', 'length' => 32, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'service_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '連携SNSID', 'precision' => null, 'autoIncrement' => null],
         'sns_user_name' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => 'SNSユーザーID', 'precision' => null, 'autoIncrement' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '作成日', 'precision' => null],
@@ -43,10 +44,11 @@ class UsersFixture extends TestFixture
         [
             'id' => 1,
             'user_name' => 'Lorem ipsum dolor sit amet',
+            'password' => 'Lorem ipsum dolor sit amet',
             'service_id' => 1,
             'sns_user_name' => 1,
-            'created' => '2016-09-14 09:57:04',
-            'modified' => '2016-09-14 09:57:04',
+            'created' => '2016-09-16 03:33:46',
+            'modified' => '2016-09-16 03:33:46',
             'del_flg' => 1
         ],
     ];

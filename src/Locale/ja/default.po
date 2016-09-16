@@ -143,79 +143,27 @@ msgstr ""
 #: Template/Users/index.ctp:7
 #: Template/Users/view.ctp:10
 msgid "List Messages"
-msgstr ""
+msgstr "送信済みメッセージ確認"
 
-#: Template/Images/add.ctp:6
-#: Template/Images/edit.ctp:12
-#: Template/Images/index.ctp:6
-#: Template/Images/view.ctp:9
-#: Template/Messages/index.ctp:4
-#: Template/Messages/view.ctp:7
-#: Template/Movies/add.ctp:6
-#: Template/Movies/edit.ctp:12
-#: Template/Movies/index.ctp:6
-#: Template/Movies/view.ctp:9
-#: Template/Users/add.ctp:8
-#: Template/Users/edit.ctp:14
-#: Template/Users/index.ctp:8
-#: Template/Users/view.ctp:11
 msgid "New Message"
-msgstr ""
+msgstr "新しいメッセージを投稿"
 
-#: Template/Images/add.ctp:12
 msgid "Add Image"
-msgstr ""
+msgstr "新しい画像を追加"
 
-#: Template/Images/add.ctp:19
-#: Template/Images/edit.ctp:25
-#: Template/Messages/add.ctp:24
-#: Template/Messages/edit.ctp:30
-#: Template/Movies/add.ctp:19
-#: Template/Movies/edit.ctp:25
-#: Template/Sns/add.ctp:15
-#: Template/Sns/edit.ctp:21
-#: Template/Users/add.ctp:22
-#: Template/Users/edit.ctp:28
 msgid "Submit"
-msgstr ""
+msgstr "送信"
 
-#: Template/Images/edit.ctp:5
-#: Template/Images/index.ctp:35
-#: Template/Messages/edit.ctp:5
-#: Template/Messages/index.ctp:37
-#: Template/Messages/view.ctp:68;99
-#: Template/Movies/edit.ctp:5
-#: Template/Movies/index.ctp:35
-#: Template/Sns/edit.ctp:5
-#: Template/Sns/index.ctp:25
-#: Template/Users/edit.ctp:5
-#: Template/Users/index.ctp:39
-#: Template/Users/view.ctp:70
 msgid "Delete"
-msgstr ""
+msgstr "削除"
 
-#: Template/Images/edit.ctp:7
-#: Template/Images/index.ctp:35
-#: Template/Images/view.ctp:5
-#: Template/Messages/edit.ctp:7
-#: Template/Messages/index.ctp:37
-#: Template/Messages/view.ctp:5;68;99
-#: Template/Movies/edit.ctp:7
-#: Template/Movies/index.ctp:35
-#: Template/Movies/view.ctp:5
-#: Template/Sns/edit.ctp:7
-#: Template/Sns/index.ctp:25
-#: Template/Sns/view.ctp:5
-#: Template/Users/edit.ctp:7
-#: Template/Users/index.ctp:39
-#: Template/Users/view.ctp:5;70
 msgid "Are you sure you want to delete # {0}?"
-msgstr ""
+msgstr "本当に {0} を削除してもよろしいですか？"
 
 #: Template/Images/edit.ctp:18
 #: Template/Images/view.ctp:4
 msgid "Edit Image"
-msgstr ""
+msgstr "画像を編集"
 
 #: Template/Images/index.ctp:4
 #: Template/Images/view.ctp:7
@@ -224,11 +172,11 @@ msgstr ""
 #: Template/Messages/index.ctp:8
 #: Template/Messages/view.ctp:11
 msgid "New Image"
-msgstr ""
+msgstr "新規画像を投稿"
 
 #: Template/Images/index.ctp:10
 msgid "Images"
-msgstr ""
+msgstr "画像"
 
 #: Template/Images/index.ctp:33
 #: Template/Messages/index.ctp:35
@@ -238,7 +186,7 @@ msgstr ""
 #: Template/Users/index.ctp:37
 #: Template/Users/view.ctp:68
 msgid "View"
-msgstr ""
+msgstr "閲覧"
 
 #: Template/Images/index.ctp:34
 #: Template/Messages/index.ctp:36
@@ -248,7 +196,7 @@ msgstr ""
 #: Template/Users/index.ctp:38
 #: Template/Users/view.ctp:69
 msgid "Edit"
-msgstr ""
+msgstr "編集"
 
 #: Template/Images/index.ctp:43
 #: Template/Messages/index.ctp:45
@@ -256,7 +204,7 @@ msgstr ""
 #: Template/Sns/index.ctp:33
 #: Template/Users/index.ctp:47
 msgid "previous"
-msgstr ""
+msgstr "戻る"
 
 #: Template/Images/index.ctp:45
 #: Template/Messages/index.ctp:47
@@ -264,22 +212,22 @@ msgstr ""
 #: Template/Sns/index.ctp:35
 #: Template/Users/index.ctp:49
 msgid "next"
-msgstr ""
+msgstr "進む"
 
 #: Template/Images/view.ctp:5
 msgid "Delete Image"
-msgstr ""
+msgstr "画像を削除"
 
 #: Template/Images/view.ctp:16
 #: Template/Movies/view.ctp:16
 msgid "Message"
-msgstr ""
+msgstr "メッセージ"
 
 #: Template/Images/view.ctp:20
 #: Template/Messages/view.ctp:51;82
 #: Template/Movies/view.ctp:20
 msgid "Path"
-msgstr ""
+msgstr "パス"
 
 #: Template/Images/view.ctp:24
 #: Template/Messages/view.ctp:24;49;80
@@ -287,7 +235,7 @@ msgstr ""
 #: Template/Sns/view.ctp:18
 #: Template/Users/view.ctp:26;51
 msgid "Id"
-msgstr ""
+msgstr "ID"
 
 #: Template/Images/view.ctp:28
 #: Template/Messages/view.ctp:28;54;85

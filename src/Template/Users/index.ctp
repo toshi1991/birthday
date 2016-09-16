@@ -15,6 +15,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('user_name') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('password') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('service_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('sns_user_name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
@@ -28,6 +29,7 @@
             <tr>
                 <td><?= $this->Number->format($user->id) ?></td>
                 <td><?= h($user->user_name) ?></td>
+                <td><?= h($user->password) ?></td>
                 <td><?= $user->has('service') ? $this->Html->link($user->service->id, ['controller' => 'Services', 'action' => 'view', $user->service->id]) : '' ?></td>
                 <td><?= $this->Number->format($user->sns_user_name) ?></td>
                 <td><?= h($user->created) ?></td>
