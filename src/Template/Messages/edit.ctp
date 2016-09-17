@@ -21,9 +21,9 @@
     <fieldset>
         <legend><?= __('Edit Message') ?></legend>
         <?php
-            echo $this->Form->input('user_id', ['options' => $users]);
+            // echo $this->Form->input('user_id', ['options' => $users]);
             echo $this->Form->input('comment');
-            echo $this->Form->input('del_flg');
+            // echo $this->Form->input('del_flg');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

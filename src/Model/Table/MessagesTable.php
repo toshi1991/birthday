@@ -70,6 +70,7 @@ class MessagesTable extends Table
             ->allowEmpty('comment');
 			
         $validator
+			->allowEmpty('del_flg')
             ->integer('del_flg');
 
         return $validator;

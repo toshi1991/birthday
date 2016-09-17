@@ -17,6 +17,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
+				<th scope="col"><?= $this->Paginator->sort('comment') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('del_flg') ?></th>
@@ -28,6 +29,7 @@
             <tr>
                 <td><?= $this->Number->format($message->id) ?></td>
                 <td><?= $message->has('user') ? $this->Html->link($message->user->id, ['controller' => 'Users', 'action' => 'view', $message->user->id]) : '' ?></td>
+				<td><?= h($message->comment) ?></td>
                 <td><?= h($message->created) ?></td>
                 <td><?= h($message->modified) ?></td>
                 <td><?= $this->Number->format($message->del_flg) ?></td>
