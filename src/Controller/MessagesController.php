@@ -84,7 +84,7 @@ class MessagesController extends AppController
             if ($this->Messages->save($message)) {
                 $this->Flash->success(__('The message has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'edit', $id]);
             } else {
                 $this->Flash->error(__('The message could not be saved. Please, try again.'));
             }

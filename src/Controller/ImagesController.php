@@ -68,7 +68,7 @@ class ImagesController extends AppController
      */
     public function add()
     {
-		var_dump($this->request->data);
+		//var_dump($this->request->data);
 			
         $image = $this->Images->newEntity();
         if ($this->request->is('ajax') || true) {

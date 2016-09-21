@@ -33,32 +33,9 @@
         <h4>画像一覧</h4>
 		<div id="imagelist">
         <?php if (!empty($message->images)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Message Id') ?></th>
-                <th scope="col"><?= __('Path') ?></th>
-                <th scope="col"><?= __('Created') ?></th>
-                <th scope="col"><?= __('Modified') ?></th>
-                <th scope="col"><?= __('Del Flg') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
             <?php foreach ($message->images as $images): ?>
-            <tr>
-                <td><?= h($images->id) ?></td>
-                <td><?= h($images->message_id) ?></td>
-                <td><?= h($images->path) ?></td>
-                <td><?= h($images->created) ?></td>
-                <td><?= h($images->modified) ?></td>
-                <td><?= h($images->del_flg) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Images', 'action' => 'view', $images->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Images', 'action' => 'edit', $images->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Images', 'action' => 'delete', $images->id], ['confirm' => __('Are you sure you want to delete # {0}?', $images->id)]) ?>
-                </td>
-            </tr>
+				<img src="<?= $this->Url->build(['controller'=>'images', 'action'=>'show', $images->id, 1]); ?>" />
             <?php endforeach; ?>
-        </table>
         <?php endif; ?>
 		</div>
     </div>
