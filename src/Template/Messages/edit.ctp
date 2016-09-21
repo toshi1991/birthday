@@ -1,4 +1,5 @@
 <?= $this->Html->script('imageuploader.js'); ?>
+<?= $this->Html->script('videouploader.js'); ?>
 
 <script>
 	var message_id = <?= $message->id; ?>;
@@ -49,6 +50,14 @@
 				<fieldset>
 					<legend>画像を追加</legend>
 					<input id="file" type="file" multiple accept="image/jpeg, image/gif, image/png">
+				</fieldset>
+			<?= $this->Form->end(); ?>
+		</div>
+		<div class="addVideo" style="clear:both;">
+			<?= $this->Form->create(null, ['id' => 'videouploader']) ?>
+				<fieldset>
+					<legend>動画を追加</legend>
+					<input id="video_file" type="file" multiple accept="video/*">
 				</fieldset>
 			<?= $this->Form->end(); ?>
 		</div>

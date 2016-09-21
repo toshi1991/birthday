@@ -56,15 +56,14 @@ class MoviesTable extends Table
     {
         $validator
             ->integer('id')
-            ->allowEmpty('id', 'create');
+            ->allowEmpty('id');
 
         $validator
-            ->requirePresence('path', 'create')
+            ->requirePresence('path')
             ->notEmpty('path');
 
         $validator
             ->integer('del_flg')
-            ->requirePresence('del_flg', 'create')
             ->notEmpty('del_flg');
 
         return $validator;

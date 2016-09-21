@@ -37,4 +37,8 @@
             <td><?= h($movie->modified) ?></td>
         </tr>
     </table>
+	
+	<video controls poster="<?= $this->request->webroot; ?>img/novideo.jpg" width="100">
+	<source src="<?= $this->request->webroot . "videos/" . $movie->path; ?>">
+	</video>
 </div>

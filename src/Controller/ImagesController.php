@@ -69,7 +69,6 @@ class ImagesController extends AppController
     public function add()
     {
 		//var_dump($this->request->data);
-			
         $image = $this->Images->newEntity();
         if ($this->request->is('ajax') || true) {
 			$data = $this->request->data;
@@ -85,7 +84,10 @@ class ImagesController extends AppController
 			$tmp_name = $file["tmp_name"];
 			
 			if (! is_uploaded_file($tmp_name)) {
+				echo '<pre>';
+				var_dump($file);
 				echo 'ng';
+				exit();
 			}
 			
 			// Create thumbnail
@@ -121,6 +123,9 @@ class ImagesController extends AppController
 
 			$image->data = file_get_contents($tmp_name);
 			$image->type = $file["type"];
+			
+			echo "<pre>";
+			//var_dump($image);
 			
             if ($this->Images->save($image)) {
                 echo 'ok';
