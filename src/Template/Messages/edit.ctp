@@ -1,3 +1,9 @@
+<?= $this->Html->script('imageuploader.js'); ?>
+
+<script>
+	var message_id = <?= $message->id; ?>;
+</script>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -17,15 +23,34 @@
     </ul>
 </nav>
 <div class="messages form large-9 medium-8 columns content">
+	<div>
     <?= $this->Form->create($message) ?>
     <fieldset>
         <legend><?= __('Edit Message') ?></legend>
         <?php
             // echo $this->Form->input('user_id', ['options' => $users]);
             echo $this->Form->input('comment');
-            // echo $this->Form->input('del_flg');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
+	</div>
+	
+	<div class="imageArea">
+		<div class="imageList">
+		<?php foreach($message->images as $img): ?>
+			<a href="<?= $this->Url->build(['controller'=>'Images', 'action' => 'show', $img->id]); ?>">
+				<img src="<?= $this->Url->build(['controller'=>'Images', 'action' => 'show', $img->id, 1]); ?>" />
+			</a>
+		<?php endforeach; ?>
+		</div>
+		<div class="addImage" style="clear:both;">
+			<?= $this->Form->create(null, ['id' => 'imageuploader']) ?>
+				<fieldset>
+					<legend>画像を追加</legend>
+					<input id="file" type="file" multiple accept="image/jpeg, image/gif, image/png">
+				</fieldset>
+			<?= $this->Form->end(); ?>
+		</div>
+	</div>
 </div>

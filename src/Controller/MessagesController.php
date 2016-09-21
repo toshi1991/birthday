@@ -77,7 +77,7 @@ class MessagesController extends AppController
     public function edit($id = null)
     {
         $message = $this->Messages->get($id, [
-            'contain' => []
+            'contain' => ['Images']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $message = $this->Messages->patchEntity($message, $this->request->data);

@@ -36,5 +36,9 @@
             <th scope="row"><?= __('Modified') ?></th>
             <td><?= h($image->modified) ?></td>
         </tr>
+		<tr>
+			<th scope="row">画像</th>
+			<td><img src="<?= $this->Url->build(['controller' => 'Images', 'action' => 'show', $image->id, 1]); ?>" /></td>
+		</tr>
     </table>
 </div>

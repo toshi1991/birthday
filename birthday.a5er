@@ -152,14 +152,15 @@ Left=800
 Top=100
 Field="画像ID","id","*ID","NOT NULL",0,"","",$FFFFFFFF,""
 Field="メッセージID","message_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
-Field="画像パス","path","@VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="画像データ","data","TEXT","NOT NULL",,"","",$FFFFFFFF,""
+Field="MIME-TYPE","type","@VARCHAR(64)","NOT NULL",,"","",$FFFFFFFF,""
 Field="作成日時","created","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
 Field="更新日時","modified","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
-Field="削除フラグ","del_flg","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="削除フラグ","del_flg","@INT","NOT NULL",,"0","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20160916113420
+ModifiedDateTime=20160921123227
 Position="MAIN",800,100
 
 [Entity]

@@ -1,5 +1,3 @@
-<?= $this->Html->script('imageuploader.js'); ?>
-
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -64,11 +62,6 @@
         <?php endif; ?>
 		</div>
     </div>
-	<div class="addImage">
-		<form>
-			<input id="file" type="file" multiple accept="image/jpeg, image/gif, image/png">
-		</form>
-	</div>
     <div class="related">
         <h4><?= __('Related Movies') ?></h4>
         <?php if (!empty($message->movies)): ?>

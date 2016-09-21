@@ -56,16 +56,18 @@ class ImagesTable extends Table
     {
         $validator
             ->integer('id')
-            ->allowEmpty('id', 'create');
+            ->allowEmpty('id');
 
         $validator
-            ->requirePresence('path', 'create')
-            ->notEmpty('path');
+            ->requirePresence('data')
+            ->notEmpty('data');
+			
+		$validator
+			->requirePresence('type')
+			->notEmpty('type');
 
         $validator
-            ->integer('del_flg')
-            ->requirePresence('del_flg', 'create')
-            ->notEmpty('del_flg');
+            ->integer('del_flg');
 
         return $validator;
     }
