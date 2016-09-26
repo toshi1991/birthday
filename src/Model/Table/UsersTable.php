@@ -9,7 +9,6 @@ use Cake\Validation\Validator;
 /**
  * Users Model
  *
- * @property \Cake\ORM\Association\BelongsTo $Services
  * @property \Cake\ORM\Association\HasMany $Messages
  *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
@@ -41,9 +40,6 @@ class UsersTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->belongsTo('Services', [
-            'foreignKey' => 'service_id'
-        ]);
         $this->hasMany('Messages', [
             'foreignKey' => 'user_id'
         ]);
@@ -89,8 +85,6 @@ class UsersTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['service_id'], 'Services'));
-
         return $rules;
     }
 }
