@@ -27,7 +27,8 @@ $cakeDescription = 'Birthday';
 		Happy Birthday!
 	</section>
     <section>
-		<?= $this->Html->link('Login', '/users/login'); ?>
+		<?= $this->Html->link('ログインして投稿', '/users/login'); ?> <br />
+		<?= $this->Html->link('ゲストとして投稿', '/users/login/true'); ?>
 	</section>
 </body>
 </html>

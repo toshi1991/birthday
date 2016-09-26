@@ -153,6 +153,7 @@ Left=500
 Top=100
 Field="メッセージID","id","*ID","NOT NULL",0,"","",$FFFFFFFF,""
 Field="ユーザーID","user_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="投稿者","name","@VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
 Field="メッセージ","comment","TEXT",,,"","",$FFFFFFFF,""
 Field="作成日","created","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
 Field="更新日","modified","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
@@ -160,7 +161,7 @@ Field="削除フラグ","del_flg","@INT","NOT NULL",,"0","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20160926110254
+ModifiedDateTime=20160926134543
 Position="MAIN",500,100
 
 [Entity]

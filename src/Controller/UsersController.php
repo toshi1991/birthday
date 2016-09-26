@@ -10,7 +10,17 @@ use App\Controller\AppController;
  */
 class UsersController extends AppController
 {
-
+	public function initialize() {
+		parent::initialize();
+		
+		$this->loadComponent('Cookie');
+	}
+	
+	public function top()
+	{
+		
+	}
+	
     /**
      * Index method
      *
@@ -112,8 +122,22 @@ class UsersController extends AppController
 	/**
 	 * Login
 	 */
-	public function login() {
-		
+	public function login($guest = false) {
+		if ($guest) {
+			if (! $this->Cookie->check('User.id')) {
+				$user = $this->Users->newEntity();
+				$guest_data = array('user_name' => 'GUEST', 'password' => '12345');
+				$user = $this->Users->patchEntity($user, $guest_data);
+				if ($this->Users->save($user)) {
+					$this->Cookie->write('User.id', "$user->id");
+				} else {
+					$this->Flash->error('ログインに失敗しました。');
+					return $this->redirect(['controller' => 'Pages']);
+				}
+			}
+			
+			return $this->redirect(['controller' => 'messages', 'action' => 'add']);
+		}
 	}
 	
 	/**

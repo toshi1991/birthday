@@ -58,7 +58,7 @@ class UsersTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->requirePresence('user_name', 'create')
+            ->requirePresence('user_name')
             ->notEmpty('user_name');
 
         $validator
@@ -70,7 +70,6 @@ class UsersTable extends Table
 
         $validator
             ->integer('del_flg')
-            ->requirePresence('del_flg', 'create')
             ->notEmpty('del_flg');
 
         return $validator;

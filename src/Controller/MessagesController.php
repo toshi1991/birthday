@@ -11,6 +11,22 @@ use App\Controller\AppController;
 class MessagesController extends AppController
 {
 
+	public function initialize() {
+		parent::initialize();
+		
+		$this->loadComponent('Cookie');
+	}
+	
+	public function beforeFilter(Event $event) {
+		parent::beforeFilter($event);
+		
+		// checking logged-in
+		if (! $this->Cookie->check('User')) {
+			$this->Flash->error('ログインしてください。');
+			return $this->redirect(['controller' => 'pages']);
+		}
+	}
+
     /**
      * Index method
      *
@@ -51,6 +67,12 @@ class MessagesController extends AppController
      */
     public function add()
     {
+		// checking logged-in
+		if (! $this->Cookie->check('User')) {
+			$this->Flash->error('ログインしてください。');
+			return $this->redirect(['controller' => 'pages']);
+		}
+	
         $message = $this->Messages->newEntity();
         if ($this->request->is('post')) {
             $message = $this->Messages->patchEntity($message, $this->request->data);
@@ -76,17 +98,23 @@ class MessagesController extends AppController
      */
     public function edit($id = null)
     {
+		// checking logged-in
+		if (! $this->Cookie->check('User')) {
+			$this->Flash->error('ログインしてください。');
+			return $this->redirect(['controller' => 'pages']);
+		}
+		
         $message = $this->Messages->get($id, [
             'contain' => ['Images']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $message = $this->Messages->patchEntity($message, $this->request->data);
             if ($this->Messages->save($message)) {
-                $this->Flash->success(__('The message has been saved.'));
+                $this->Flash->success('投稿ありがとうございます。');
 
                 return $this->redirect(['action' => 'edit', $id]);
             } else {
-                $this->Flash->error(__('The message could not be saved. Please, try again.'));
+                $this->Flash->error('投稿に失敗しました。再度お試しください。');
             }
         }
         $users = $this->Messages->Users->find('list', ['limit' => 200]);

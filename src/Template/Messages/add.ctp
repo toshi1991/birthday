@@ -13,10 +13,11 @@
 <div class="messages form large-9 medium-8 columns content">
     <?= $this->Form->create($message) ?>
     <fieldset>
-        <legend><?= __('Add Message') ?></legend>
+        <legend>メッセージ投稿</legend>
         <?php
             echo $this->Form->input('user_id', ['type' => 'hidden', 'value' => 1]);
-            echo $this->Form->input('comment');
+			echo $this->Form->input('name', ['label' => 'お名前(ニックネーム)']);
+            echo $this->Form->input('comment', ['label' => 'メッセージ']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
