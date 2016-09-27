@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Messages Controller
@@ -10,16 +11,30 @@ use App\Controller\AppController;
  */
 class MessagesController extends AppController
 {
+	public function initialize()
+	{
+	    parent::initialize();
+	    $this->loadComponent('Flash');
 
-	public function initialize() {
-		parent::initialize();
-		
+	    //Auth
+	    $this->loadComponent('Auth',[
+			'authenticate' => [
+				'Form' => [
+					'fields' => [
+						'username' => 'user_name',
+						'password' => 'password'
+					]
+				]
+			]
+		]);
+
 		$this->loadComponent('Cookie');
 	}
-	
-	public function beforeFilter(Event $event) {
+
+	public function beforeFilter(Event $event)
+    {
 		parent::beforeFilter($event);
-		
+
 		// checking logged-in
 		if (! $this->Cookie->check('User')) {
 			$this->Flash->error('ログインしてください。');
@@ -72,7 +87,7 @@ class MessagesController extends AppController
 			$this->Flash->error('ログインしてください。');
 			return $this->redirect(['controller' => 'pages']);
 		}
-	
+
         $message = $this->Messages->newEntity();
         if ($this->request->is('post')) {
             $message = $this->Messages->patchEntity($message, $this->request->data);
@@ -103,7 +118,7 @@ class MessagesController extends AppController
 			$this->Flash->error('ログインしてください。');
 			return $this->redirect(['controller' => 'pages']);
 		}
-		
+
         $message = $this->Messages->get($id, [
             'contain' => ['Images']
         ]);

@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * Users Controller
@@ -12,15 +13,15 @@ class UsersController extends AppController
 {
 	public function initialize() {
 		parent::initialize();
-		
+
 		$this->loadComponent('Cookie');
 	}
-	
+
 	public function top()
 	{
-		
+
 	}
-	
+
     /**
      * Index method
      *
@@ -118,32 +119,59 @@ class UsersController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-	
+
 	/**
 	 * Login
 	 */
 	public function login($guest = false) {
+		$this->loadComponent('Auth',[
+			'authenticate' => [
+				'Form' => [
+					'fields' => [
+						'username' => 'user_name',
+						'password' => 'password'
+					]
+				]
+			]
+		]);
+
 		if ($guest) {
-			if (! $this->Cookie->check('User.id')) {
-				$user = $this->Users->newEntity();
-				$guest_data = array('user_name' => 'GUEST', 'password' => '12345');
-				$user = $this->Users->patchEntity($user, $guest_data);
-				if ($this->Users->save($user)) {
-					$this->Cookie->write('User.id', "$user->id");
-				} else {
-					$this->Flash->error('ログインに失敗しました。');
-					return $this->redirect(['controller' => 'Pages']);
+			$new_data = $this->Users->newEntity();
+			$guest_data = array('user_name' => "GUEST_TMP", 'password' => '12345');
+			$new_data = $this->Users->patchEntity($new_data, $guest_data);
+			if ($this->Users->save($new_data)) {
+				$new_data->user_name = "GUEST" . $new_data->id;
+				$new_data->password = '12345';//$guest_data['password'];
+				if ($this->Users->save($new_data)) {
+					$this->request->data = $new_data;
+					$user = $this->Auth->identify();
+					if($user){
+						$this->Auth->setUser($user);
+						return $this->redirect($this->Auth->redirectUrl());
+					}
+					$this->Flash->error('ゲストログインに失敗しました。再度お試しください。');
 				}
+			} else {
+				$this->Flash->error('ログインに失敗しました。');
+				return $this->redirect(['controller' => 'Pages']);
 			}
-			
 			return $this->redirect(['controller' => 'messages', 'action' => 'add']);
+		} else {
+			if($this->request->is('post')){
+				$user = $this->Auth->identify();
+				if($user){
+					$this->Auth->setUser($user);
+					return $this->redirect($this->Auth->redirectUrl());
+				}
+				$this->Flash->error('ユーザー名かパスワードが間違ってます。');
+			}
 		}
 	}
-	
+
 	/**
 	 * My Page
 	 */
 	public function mypage() {
-		 
+
 	 }
 }
