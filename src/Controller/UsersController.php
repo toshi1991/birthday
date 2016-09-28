@@ -2,7 +2,6 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * Users Controller
@@ -14,7 +13,26 @@ class UsersController extends AppController
 	public function initialize() {
 		parent::initialize();
 
-		$this->loadComponent('Cookie');
+		$this->loadComponent('Auth',[
+			'authenticate' => [
+				'Form' => [
+					'fields' => [
+						'username' => 'user_name',
+						'password' => 'password'
+					]
+				]
+			],
+			'logoutRedirect' => [ // ログアウト後に遷移するアクションを指定
+                'controller' => 'Users',
+                'action' => 'mypage',
+            ],
+			'loginAction' => [
+				'controller' => 'users',
+				'action' => 'login'
+			]
+		]);
+
+		$this->Auth->allow(['login']);
 	}
 
 	public function top()
@@ -124,38 +142,24 @@ class UsersController extends AppController
 	 * Login
 	 */
 	public function login($guest = false) {
-		$this->loadComponent('Auth',[
-			'authenticate' => [
-				'Form' => [
-					'fields' => [
-						'username' => 'user_name',
-						'password' => 'password'
-					]
-				]
-			]
-		]);
-
+		$this->Auth->allow();
 		if ($guest) {
 			$new_data = $this->Users->newEntity();
-			$guest_data = array('user_name' => "GUEST_TMP", 'password' => '12345');
+			$guest_data = array('user_name' => "GUEST".time(), 'password' => '12345');
 			$new_data = $this->Users->patchEntity($new_data, $guest_data);
 			if ($this->Users->save($new_data)) {
-				$new_data->user_name = "GUEST" . $new_data->id;
-				$new_data->password = '12345';//$guest_data['password'];
-				if ($this->Users->save($new_data)) {
-					$this->request->data = $new_data;
-					$user = $this->Auth->identify();
-					if($user){
-						$this->Auth->setUser($user);
-						return $this->redirect($this->Auth->redirectUrl());
-					}
-					$this->Flash->error('ゲストログインに失敗しました。再度お試しください。');
+				$this->request->data["user_name"] = $new_data["user_name"];
+				$this->request->data["password"] = "12345";
+				$user = $this->Auth->identify();
+				if($user){
+					$this->Auth->setUser($user);
+					//return $this->redirect($this->Auth->redirectUrl());
+					return $this->redirect(['controller' => 'messages', 'action' => 'add']);
 				}
-			} else {
-				$this->Flash->error('ログインに失敗しました。');
-				return $this->redirect(['controller' => 'Pages']);
 			}
-			return $this->redirect(['controller' => 'messages', 'action' => 'add']);
+
+			$this->Flash->error('ゲストログインに失敗しました。再度お試しください。');
+			return $this->redirect(['controller' => 'Pages']);
 		} else {
 			if($this->request->is('post')){
 				$user = $this->Auth->identify();
@@ -172,6 +176,9 @@ class UsersController extends AppController
 	 * My Page
 	 */
 	public function mypage() {
+	}
 
+	 public function logout() {
+		 return $this->redirect($this->Auth->logout());
 	 }
 }

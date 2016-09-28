@@ -59,7 +59,14 @@ class UsersTable extends Table
 
         $validator
             ->requirePresence('user_name')
-            ->notEmpty('user_name');
+            ->notEmpty('user_name')
+            ->add('user_name',[
+                    'unique' => [
+                        'rule' => 'validateUnique',
+                        'provider' => 'table',
+                        'message' => "既に使用されているユーザー名です。"
+                    ]
+                ]);
 
         $validator
             ->allowEmpty('password');
