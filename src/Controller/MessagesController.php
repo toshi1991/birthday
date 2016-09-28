@@ -17,29 +17,19 @@ class MessagesController extends AppController
 	    $this->loadComponent('Flash');
 
 	    //Auth
-	    $this->loadComponent('Auth',[
+		$this->loadComponent('Auth',[
 			'authenticate' => [
-				'Form' => [
-					'fields' => [
-						'username' => 'user_name',
-						'password' => 'password'
-					]
+				'loginAction' => [
+					'controller' => 'users',
+					'action' => 'login'
 				]
 			]
 		]);
-
-		$this->loadComponent('Cookie');
 	}
 
 	public function beforeFilter(Event $event)
     {
 		parent::beforeFilter($event);
-
-		// checking logged-in
-		if (! $this->Cookie->check('User')) {
-			$this->Flash->error('ログインしてください。');
-			return $this->redirect(['controller' => 'pages']);
-		}
 	}
 
     /**
@@ -82,12 +72,6 @@ class MessagesController extends AppController
      */
     public function add()
     {
-		// checking logged-in
-		if (! $this->Cookie->check('User')) {
-			$this->Flash->error('ログインしてください。');
-			return $this->redirect(['controller' => 'pages']);
-		}
-
         $message = $this->Messages->newEntity();
         if ($this->request->is('post')) {
             $message = $this->Messages->patchEntity($message, $this->request->data);
