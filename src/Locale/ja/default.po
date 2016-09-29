@@ -333,7 +333,7 @@ msgstr ""
 #: Template/Messages/view.ctp:41
 #: Template/Users/view.ctp:53
 msgid "Comment"
-msgstr ""
+msgstr "メッセージ"
 
 #: Template/Messages/view.ctp:45
 msgid "Related Images"
@@ -440,4 +440,3 @@ msgstr ""
 #: Template/Users/view.ctp:52
 msgid "User Id"
 msgstr ""
-

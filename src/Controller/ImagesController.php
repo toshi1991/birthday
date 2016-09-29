@@ -43,14 +43,14 @@ class ImagesController extends AppController
         $this->set('image', $image);
         $this->set('_serialize', ['image']);
     }
-	
+
 	public function show($id, $thumb = 0){
 		$this->autoRender = FALSE;
 		$image = $this->Images->get($id);
-		
+
 		if ($image != NULL) {
 	//		var_dump($image);
-			
+
 			header('Content-type: ' . h($image->type));
 			if ($thumb == 0) {
 				echo stream_get_contents($image->data);
@@ -78,29 +78,27 @@ class ImagesController extends AppController
 			}
 			$file = $data['image'];
 			$this->autoRender = FALSE;
-			
+
             $image = $this->Images->patchEntity($image, $this->request->data);
-			
+
 			$tmp_name = $file["tmp_name"];
-			
+
 			if (! is_uploaded_file($tmp_name)) {
-				echo '<pre>';
-				var_dump($file);
 				echo 'ng';
 				exit();
 			}
-			
+
 			// Create thumbnail
 			$new_width = 200;
 			list($image_w, $image_h) = getimagesize($tmp_name);
 			$proportion = $image_w / $image_h;
 			$new_height = $new_width / $proportion;
- 
+
 			if($proportion < 1){
 				$new_height = $new_width;
 				$new_width = $new_width * $proportion;
 			}
-			
+
 			$canvas = imagecreatetruecolor($new_width, $new_height);
 			$original_image = $this->imagecreatefromfile($tmp_name);
 			imagecopyresampled($canvas,  // 背景画像
@@ -123,16 +121,11 @@ class ImagesController extends AppController
 
 			$image->data = file_get_contents($tmp_name);
 			$image->type = $file["type"];
-			
-			echo "<pre>";
-			//var_dump($image);
-			
+
             if ($this->Images->save($image)) {
-                echo 'ok';
+                echo $image->id;
             } else {
-                echo __('The image could not be saved. Please, try again.');
-				echo "<pre>";
-				var_dump($image);
+                echo 'ng';
             }
         }
         $messages = $this->Images->Messages->find('list', ['limit' => 200]);
@@ -186,17 +179,17 @@ class ImagesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-	
-	
+
+
 	private function imagecreatefromfile($path, $user_functions = false)
 	{
 		$info = @getimagesize($path);
-		
+
 		if(!$info)
 		{
 			return false;
 		}
-		
+
 		$functions = array(
 			IMAGETYPE_GIF => 'imagecreatefromgif',
 			IMAGETYPE_JPEG => 'imagecreatefromjpeg',
@@ -204,22 +197,22 @@ class ImagesController extends AppController
 			IMAGETYPE_WBMP => 'imagecreatefromwbmp',
 			IMAGETYPE_XBM => 'imagecreatefromwxbm',
 			);
-		
+
 		if($user_functions)
 		{
 			$functions[IMAGETYPE_BMP] = 'imagecreatefrombmp';
 		}
-		
+
 		if(!$functions[$info[2]])
 		{
 			return false;
 		}
-		
+
 		if(!function_exists($functions[$info[2]]))
 		{
 			return false;
 		}
-		
+
 		return $functions[$info[2]]($path);
 	}
 }

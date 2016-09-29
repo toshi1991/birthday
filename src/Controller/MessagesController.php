@@ -18,11 +18,9 @@ class MessagesController extends AppController
 
 	    //Auth
 		$this->loadComponent('Auth',[
-			'authenticate' => [
-				'loginAction' => [
-					'controller' => 'users',
-					'action' => 'login'
-				]
+			'loginAction' => [
+				'controller' => 'users',
+				'action' => 'login'
 			]
 		]);
 	}
@@ -72,19 +70,26 @@ class MessagesController extends AppController
      */
     public function add()
     {
+		$user = $this->Auth->user();
+		if (empty($user)) {
+			$this->redirect(['controller' => 'users', 'action' => 'logout']);
+		}
+
+		$user['user_name'] = preg_replace('/GUEST.*/i', $user["user_name"], 'ゲスト');
+
         $message = $this->Messages->newEntity();
         if ($this->request->is('post')) {
             $message = $this->Messages->patchEntity($message, $this->request->data);
+			$message->user_id = $user['id'];
             if ($this->Messages->save($message)) {
-                $this->Flash->success(__('The message has been saved.'));
-
+                $this->Flash->success('投稿しました。');
                 return $this->redirect(['action' => 'edit', $message->id]);
             } else {
-                $this->Flash->error(__('The message could not be saved. Please, try again.'));
+                $this->Flash->error('投稿に失敗しました。再度お試しください。');
             }
         }
-        $users = $this->Messages->Users->find('list', ['limit' => 200]);
-        $this->set(compact('message', 'users'));
+
+        $this->set(compact('message', 'user'));
         $this->set('_serialize', ['message']);
     }
 
@@ -98,14 +103,17 @@ class MessagesController extends AppController
     public function edit($id = null)
     {
 		// checking logged-in
-		if (! $this->Cookie->check('User')) {
-			$this->Flash->error('ログインしてください。');
-			return $this->redirect(['controller' => 'pages']);
-		}
+		$user = $this->Auth->user();
 
         $message = $this->Messages->get($id, [
             'contain' => ['Images']
         ]);
+
+		if ($message->user_id != $user['id']) {
+			$this->Flash->error('ログインしてください。');
+			$this->redirect(['controller' => 'users', 'action' => 'logout']);
+		}
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $message = $this->Messages->patchEntity($message, $this->request->data);
             if ($this->Messages->save($message)) {
