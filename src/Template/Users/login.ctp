@@ -14,6 +14,6 @@
     <?= $this->Form->create() ?>
     <?= $this->Form->input('user_name') ?>
     <?= $this->Form->input('password') ?>
-    <?= $this->Form->button('ログイン') ?> or
-    <a href="/birthday/users/login/1"><?= $this->Form->button('ゲストログイン', ['type' => 'none']) ?></a>
+    <?= $this->Form->button('ログイン') ?>  
     <?= $this->Form->end() ?>
+    <a href="/birthday/users/login/1"><?= $this->Form->button('ゲストログイン', ['type' => 'none']) ?></a>

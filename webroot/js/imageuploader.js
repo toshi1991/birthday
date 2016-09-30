@@ -22,40 +22,44 @@ $.fn.uploadThumbs = function (option) {
 // preview thumbnail images
 $.fn.uploadThumbs.run = function (option) {
 	var $self = $(this);
-	
+
 	// Checking HTML5 ? (File API exist?)
-	if (window.File && window.FileReader && this.files) {		
-				
+	if (window.File && window.FileReader && this.files) {
+
 		for (var i = 0, I = this.files.length; i < I; i++) { // multiple
 			var file  = this.files[i];
 			if (file && (file.type && file.type.match(/^image/)		// Checking image ?
 			         || !file.type && file.name.match(/\.(jp[eg]+|png|gif|bmp)$/i) && $.browser.msie)) {
-					 
+
 				var reader = new FileReader();
 				reader.onload = function (file, i) { return function () {
-					var tag = '<img src="'+ this.result +'" alt="'+ file.name +'" title="'+ file.name +' ('+ Math.round( file.size / 1024 ) +'kb)' +'" class="thumb" />';
+					// tmp画像挿入
 
-					// set thumbnail images
-					$.fn.uploadThumbs.set.call($self, option, tag);
+
+					// (add)ajax
+					var fd = new FormData();
+					fd.append('image', file);
+					fd.append('message_id', message_id);
+					console.log(file);
+			        $.ajax({
+			            url: '/birthday/images/add',
+			            type: 'POST',
+			            data: fd,
+			            processData: false,
+			            contentType: false,
+			            dataType: 'json'
+			        })
+			        .done(function(data) {
+						var outertag = $('<a>');
+						outertag.attr('href', '/birthday/images/show/' + data);
+						var innertag = $('<img>').attr('src', '/birthday/images/show/' + data + '/1');
+						outertag.append(innertag);
+						$('.imageList').append(outertag);
+			        });
 				}}(file, i);
 				reader.readAsDataURL(file);	// read image data
 
-				// (add)ajax
-				var fd = new FormData();
-				fd.append('image', file);
-				fd.append('message_id', message_id);
-				console.log(file);
-		        $.ajax({
-		            url: '/birthday/images/add',
-		            type: 'POST',
-		            data: fd,
-		            processData: false,
-		            contentType: false,
-		            dataType: 'json'
-		        })
-		        .done(function(data) {
-					console.log(data);
-		        });
+
 			}
 		}
 	}
