@@ -3,12 +3,16 @@ a.disabled {
     pointer-events: none;
 }
 
-a:hover {
-    color: #15848F;
+a {
+    color: #833A19;
 }
 
-a {
-    color: #1798A5;
+a:visited {
+  color: #800080;
+}
+
+a:hover {
+    color: #FF7878;
 }
 
 .side-nav li a:not(.button) {
@@ -127,10 +131,6 @@ ul.pagination .disabled:hover a {
 }
 .desc:after {
     content: " \2191";
-}
-
-button {
-    background: #8D6E65;
 }
 
 .form button:hover, .form button:focus {
@@ -382,12 +382,12 @@ pre {
 }
 
 .top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
-    background: #116d76;
+    background: #ffafaf;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-    background-color: #308e97;
-    background: #308e97;
+    background-color: #ef6b6b;
+    background: #ef6b6b;
 }
 
 .side-nav li.heading {
@@ -463,7 +463,7 @@ fieldset legend {
 }
 
 button {
-    background: #966600;
+    background: #ffafaf;
 }
 
 div.message {
@@ -556,7 +556,7 @@ div.message.hidden {
 }
 
 .content h3 {
-    color: #be140b;
+    color: #713B48;
     padding-bottom: 0.5rem;
     margin-bottom: 20px;
 }

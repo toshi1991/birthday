@@ -115,7 +115,7 @@ msgstr ""
 #: Template/Users/index.ctp:3;23
 #: Template/Users/view.ctp:3;57
 msgid "Actions"
-msgstr ""
+msgstr "操作"
 
 #: Template/Images/add.ctp:4
 #: Template/Images/edit.ctp:10
@@ -125,7 +125,7 @@ msgstr ""
 #: Template/Messages/index.ctp:7
 #: Template/Messages/view.ctp:10
 msgid "List Images"
-msgstr ""
+msgstr "画像一覧"
 
 #: Template/Images/add.ctp:5
 #: Template/Images/edit.ctp:11
@@ -249,22 +249,22 @@ msgstr ""
 #: Template/Movies/view.ctp:32
 #: Template/Users/view.ctp:38
 msgid "Created"
-msgstr ""
+msgstr "作成日"
 
 #: Template/Images/view.ctp:36
 #: Template/Messages/view.ctp:36;53;84
 #: Template/Movies/view.ctp:36
 #: Template/Users/view.ctp:42;55
 msgid "Modified"
-msgstr ""
+msgstr "更新日"
 
 #: Template/Layout/error.ctp:35
 msgid "Error"
-msgstr ""
+msgstr "エラー"
 
 #: Template/Layout/error.ctp:43
 msgid "Back"
-msgstr ""
+msgstr "戻る"
 
 #: Template/Messages/add.ctp:5
 #: Template/Messages/edit.ctp:11
@@ -274,7 +274,7 @@ msgstr ""
 #: Template/Users/edit.ctp:10
 #: Template/Users/view.ctp:6
 msgid "List Users"
-msgstr ""
+msgstr "ユーザー一覧"
 
 #: Template/Messages/add.ctp:6
 #: Template/Messages/edit.ctp:12
@@ -283,7 +283,7 @@ msgstr ""
 #: Template/Users/index.ctp:4
 #: Template/Users/view.ctp:7
 msgid "New User"
-msgstr ""
+msgstr "ユーザー登録"
 
 #: Template/Messages/add.ctp:9
 #: Template/Messages/edit.ctp:15
@@ -293,7 +293,7 @@ msgstr ""
 #: Template/Movies/edit.ctp:10
 #: Template/Movies/view.ctp:6
 msgid "List Movies"
-msgstr ""
+msgstr "動画一覧"
 
 #: Template/Messages/add.ctp:10
 #: Template/Messages/edit.ctp:16
@@ -302,116 +302,71 @@ msgstr ""
 #: Template/Movies/index.ctp:4
 #: Template/Movies/view.ctp:7
 msgid "New Movie"
-msgstr ""
+msgstr "動画を追加"
 
 #: Template/Messages/add.ctp:16
 msgid "Add Message"
-msgstr ""
+msgstr "メッセージを投稿"
 
 #: Template/Messages/edit.ctp:22
 #: Template/Messages/view.ctp:4
 msgid "Edit Message"
-msgstr ""
+msgstr "メッセージを編集"
 
 #: Template/Messages/index.ctp:14
 msgid "Messages"
-msgstr ""
+msgstr "メッセージ"
 
 #: Template/Messages/view.ctp:5
 msgid "Delete Message"
-msgstr ""
+msgstr "メッセージを削除"
 
 #: Template/Messages/view.ctp:20
 msgid "User"
-msgstr ""
-
-#: Template/Messages/view.ctp:32
-#: Template/Users/view.ctp:54
-msgid "Craeted"
-msgstr ""
+msgstr "ユーザー"
 
 #: Template/Messages/view.ctp:41
 #: Template/Users/view.ctp:53
 msgid "Comment"
-msgstr ""
+msgstr "メッセージ"
 
 #: Template/Messages/view.ctp:45
 msgid "Related Images"
-msgstr ""
+msgstr "画像"
 
 #: Template/Messages/view.ctp:50;81
 msgid "Message Id"
-msgstr ""
+msgstr "メッセージID"
 
 #: Template/Messages/view.ctp:76
 msgid "Related Movies"
-msgstr ""
+msgstr "動画"
 
 #: Template/Movies/add.ctp:12
 msgid "Add Movie"
-msgstr ""
+msgstr "動画を追加"
 
 #: Template/Movies/edit.ctp:18
 #: Template/Movies/view.ctp:4
 msgid "Edit Movie"
-msgstr ""
+msgstr "動画を編集"
 
 #: Template/Movies/index.ctp:10
 msgid "Movies"
-msgstr ""
+msgstr "動画"
 
 #: Template/Movies/view.ctp:5
 msgid "Delete Movie"
-msgstr ""
-
-#: Template/Sns/add.ctp:4
-#: Template/Sns/edit.ctp:10
-#: Template/Sns/view.ctp:6
-#: Template/Users/add.ctp:5
-#: Template/Users/edit.ctp:11
-#: Template/Users/index.ctp:5
-#: Template/Users/view.ctp:8
-msgid "List Sns"
-msgstr ""
-
-#: Template/Sns/add.ctp:10
-msgid "Add Sn"
-msgstr ""
-
-#: Template/Sns/edit.ctp:16
-#: Template/Sns/view.ctp:4
-msgid "Edit Sn"
-msgstr ""
-
-#: Template/Sns/index.ctp:4
-#: Template/Sns/view.ctp:7
-#: Template/Users/add.ctp:6
-#: Template/Users/edit.ctp:12
-#: Template/Users/index.ctp:6
-#: Template/Users/view.ctp:9
-msgid "New Sn"
-msgstr ""
-
-#: Template/Sns/index.ctp:8
-msgid "Sns"
-msgstr ""
-
-#: Template/Sns/view.ctp:5
-msgid "Delete Sn"
-msgstr ""
-
-#: Template/Sns/view.ctp:14
-msgid "Sns Name"
-msgstr ""
+msgstr "動画を削除"
 
 #: Template/Users/add.ctp:14
 msgid "Add User"
-msgstr ""
+msgstr "ユーザー登録"
 
 #: Template/Users/edit.ctp:20
 #: Template/Users/view.ctp:4
 msgid "Edit User"
-msgstr ""
+msgstr "ユーザー情報変更"
 
 #: Template/Users/index.ctp:12
 msgid "Users"
@@ -419,25 +374,16 @@ msgstr "ユーザー"
 
 #: Template/Users/view.ctp:5
 msgid "Delete User"
-msgstr ""
+msgstr "ユーザー削除"
 
 #: Template/Users/view.ctp:18
 msgid "User Name"
-msgstr ""
-
-#: Template/Users/view.ctp:22
-msgid "Sn"
-msgstr ""
-
-#: Template/Users/view.ctp:30
-msgid "Sns User Name"
-msgstr ""
+msgstr "ユーザーID"
 
 #: Template/Users/view.ctp:47
 msgid "Related Messages"
-msgstr ""
+msgstr "投稿したメッセージ"
 
 #: Template/Users/view.ctp:52
 msgid "User Id"
-msgstr ""
-
+msgstr "ユーザーID"
