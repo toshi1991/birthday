@@ -496,3 +496,12 @@ input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, inpu
     border-color: #ffafaf;
     border-width: 2px;
 }
+
+.messages.content {
+  width: 100%;
+}
+
+.innercolumns {
+  max-width: 600px;
+  margin: auto;
+}

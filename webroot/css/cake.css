@@ -16,11 +16,11 @@ a:hover {
 }
 
 .side-nav li a:not(.button) {
-    color: #15848F;
+    color: #833A19;
 }
 
 .side-nav li a:not(.button):hover {
-    color: #15848F;
+    color: #E75991;
 }
 
 header {
@@ -38,7 +38,7 @@ header .header-title {
 }
 
 legend {
-    color:#15848F;
+    color:#713B48;
 }
 
 .row {
@@ -378,7 +378,7 @@ pre {
 }
 
 .top-bar.expanded .title-area {
-    background: #01545b;
+    background: #ffafaf;
 }
 
 .top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
@@ -391,7 +391,7 @@ pre {
 }
 
 .side-nav li.heading {
-    color: #1798A5;
+    color: #713B48;
     font-size: 0.875rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -442,11 +442,11 @@ table tr:nth-of-type(even) {
 fieldset {
     border: none;
     padding: 1.25rem;
-    margin: 1.125rem 0;
+    margin: 0;
 }
 
 fieldset legend {
-    border-bottom: 2px solid #1798A5;
+    border-bottom: 2px solid #713B48;
     width: 100%;
     line-height: 2rem;
 }
@@ -458,7 +458,7 @@ fieldset legend {
 }
 
 .form button:hover, .form button:focus {
-    background: #BE840B;
+    background: #ef6b6b;
     box-shadow: none;
 }
 
@@ -473,7 +473,7 @@ div.message {
     font-weight: normal;
     padding: 0 1.5rem 0 1.5rem;
     transition: height 300ms ease-out 0s;
-    background-color: #a0d3e8;
+    background-color: #fff0f0;
     color: #626262;
     top: 15px;
     right: 15px;
@@ -498,7 +498,7 @@ div.message:before {
     background-color: #FFF;
     padding: 12px 14px 12px 10px;
     content: "i";
-    color: #a0d3e8;
+    color: #ffafaf;
 }
 
 div.message.error {

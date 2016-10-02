@@ -5,13 +5,7 @@
 	var message_id = <?= $message->id; ?>;
 </script>
 
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-		<li><?= $this->Html->link('新規メッセージ投稿', ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Messages'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
+
 <div class="messages form large-9 medium-8 columns content">
 	<div>
     <?= $this->Form->create($message) ?>
@@ -37,7 +31,7 @@
 		<div class="addImage" style="clear:both;">
 			<?= $this->Form->create(null, ['id' => 'imageuploader']) ?>
 				<fieldset>
-					<legend>画像を追加</legend>
+					<legend>画像</legend>
 					<input id="file" type="file" multiple accept="image/jpeg, image/gif, image/png">
 				</fieldset>
 			<?= $this->Form->end(); ?>
@@ -45,7 +39,7 @@
 		<div class="addVideo" style="clear:both;">
 			<?= $this->Form->create(null, ['id' => 'videouploader']) ?>
 				<fieldset>
-					<legend>動画を追加</legend>
+					<legend>動画</legend>
 					<input id="video_file" type="file" multiple accept="video/*">
 				</fieldset>
 			<?= $this->Form->end(); ?>

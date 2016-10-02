@@ -37,9 +37,14 @@ class MessagesController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Users']
-        ];
+				$user = $this->Auth->user();
+
+				$opt = ['contain' => ['Users']];
+				if (! $user['admin_flg']) {
+					$opt['conditions'] = ['user_id' => $user["id"]];
+				}
+				$this->paginate = $opt;
+
         $messages = $this->paginate($this->Messages);
 
         $this->set(compact('messages'));

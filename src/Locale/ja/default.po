@@ -16,7 +16,7 @@ msgstr ""
 
 #: Controller/ImagesController.php:58;85
 msgid "The image has been saved."
-msgstr ""
+msgstr "画像を投稿しました。"
 
 #: Controller/ImagesController.php:62;89
 msgid "The image could not be saved. Please, try again."
@@ -115,7 +115,7 @@ msgstr ""
 #: Template/Users/index.ctp:3;23
 #: Template/Users/view.ctp:3;57
 msgid "Actions"
-msgstr "操作"
+msgstr ""
 
 #: Template/Images/add.ctp:4
 #: Template/Images/edit.ctp:10
@@ -146,7 +146,7 @@ msgid "List Messages"
 msgstr "送信済みメッセージ確認"
 
 msgid "New Message"
-msgstr "新しいメッセージを投稿"
+msgstr "新規メッセージ投稿"
 
 msgid "Add Image"
 msgstr "新しい画像を追加"
@@ -328,6 +328,8 @@ msgstr "ユーザー"
 #: Template/Messages/view.ctp:41
 #: Template/Users/view.ctp:53
 msgid "Comment"
+msgstr "メッセージ"
+msgid "comment"
 msgstr "メッセージ"
 
 #: Template/Messages/view.ctp:45

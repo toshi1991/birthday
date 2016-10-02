@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Log\Log;
 
 /**
  * Users Controller
@@ -158,7 +159,12 @@ class UsersController extends AppController
 					$this->Auth->setUser($user);
 					//return $this->redirect($this->Auth->redirectUrl());
 					return $this->redirect(['controller' => 'messages', 'action' => 'add']);
+				} else {
+						$this->log('Auth failed.', 'error');
+						$this->log(print_r($user, true), 'error');
 				}
+			} else {
+				$this->log("Saving user data failed.", 'error');
 			}
 
 			$this->Flash->error('ゲストログインに失敗しました。再度お試しください。');
