@@ -24,7 +24,7 @@ msgstr ""
 
 #: Controller/ImagesController.php:109
 msgid "The image has been deleted."
-msgstr ""
+msgstr "画像を削除しました。"
 
 #: Controller/ImagesController.php:111
 msgid "The image could not be deleted. Please, try again."
@@ -32,23 +32,23 @@ msgstr ""
 
 #: Controller/MessagesController.php:58;85
 msgid "The message has been saved."
-msgstr ""
+msgstr "メッセージを保存しました。"
 
 #: Controller/MessagesController.php:62;89
 msgid "The message could not be saved. Please, try again."
-msgstr ""
+msgstr "メッセージの保存に失敗しました。再度おためしください。"
 
 #: Controller/MessagesController.php:109
 msgid "The message has been deleted."
-msgstr ""
+msgstr "メッセージを削除しました。"
 
 #: Controller/MessagesController.php:111
 msgid "The message could not be deleted. Please, try again."
-msgstr ""
+msgstr "メッセージの削除に失敗しました。再度お試しください。"
 
 #: Controller/MoviesController.php:58;85
 msgid "The movie has been saved."
-msgstr ""
+msgstr "動画を保存しました。"
 
 #: Controller/MoviesController.php:62;89
 msgid "The movie could not be saved. Please, try again."

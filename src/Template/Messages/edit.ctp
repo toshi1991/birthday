@@ -6,8 +6,8 @@
 </script>
 
 
-<div class="messages form large-9 medium-8 columns content">
-	<div>
+<div class="messages form large-9 medium-8 columns content clearfix">
+	<div class="clearfix">
     <?= $this->Form->create($message) ?>
     <fieldset>
         <legend>メッセージ編集</legend>
@@ -20,35 +20,36 @@
     <?= $this->Form->end() ?>
 	</div>
 
-	<div class="imageArea" style="clear:both;">
+	<div class="imageArea" style="margin-top: 10px;">
 		<div class="imageList">
 		<?php foreach($message->images as $img): ?>
 			<a href="<?= $this->Url->build(['controller'=>'Images', 'action' => 'show', $img->id]); ?>">
 				<img src="<?= $this->Url->build(['controller'=>'Images', 'action' => 'show', $img->id, 1]); ?>" />
 			</a>
 		<?php endforeach; ?>
+			<img src="/birthday/img/noimage.png" id="addimage" />
 		</div>
-		<div class="addImage" style="clear:both;">
-			<?= $this->Form->create(null, ['id' => 'imageuploader']) ?>
-				<fieldset>
-					<legend>画像</legend>
-					<input id="file" type="file" multiple accept="image/jpeg, image/gif, image/png">
-				</fieldset>
-			<?= $this->Form->end(); ?>
-		</div>
-		<div class="addVideo" style="clear:both;">
-			<?= $this->Form->create(null, ['id' => 'videouploader']) ?>
-				<fieldset>
-					<legend>動画</legend>
-					<input id="video_file" type="file" multiple accept="video/*">
-				</fieldset>
-			<?= $this->Form->end(); ?>
-		</div>
+		<?= $this->Form->create(null, ['id' => 'imageuploader']) ?>
+			<input id="file" type="file" multiple accept="image/jpeg, image/gif, image/png">
+		<?= $this->Form->end(); ?>
+		<?= $this->Form->create(null, ['id' => 'videouploader']) ?>
+			<input id="video_file" type="file" multiple accept="video/*">
+		<?= $this->Form->end(); ?>
 	</div>
-	<?= $this->Form->postLink(
-			__('Delete'),
+	<div class="videoArea">
+		<?php foreach($message->movies as $movie): ?>
+			<video controls poster="<?= $this->request->webroot; ?>img/novideo.png" width="100">
+			<source src="<?= $this->request->webroot . "videos/" . $movie->path; ?>">
+			</video>
+		<?php endforeach; ?>
+		<img src="<?= $this->request->webroot; ?>img/nomovie.png" id="addvideo" />
+	</div>
+	<span id="del_link">
+		<?= $this->Form->postLink(
+			'メッセージを削除',
 			['action' => 'delete', $message->id],
 			['confirm' => '本当に削除しますか？']
 		)
-	?>
+		?>
+	</span>
 </div>

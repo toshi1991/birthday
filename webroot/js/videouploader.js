@@ -13,21 +13,21 @@ $.fn.uploadVideos = function () {
 // preview thumbnail images
 $.fn.uploadVideos.run = function () {
 	var $self = $(this);
-	
+
 	// Checking HTML5 ? (File API exist?)
-	if (window.File && window.FileReader && this.files) {		
-				
+	if (window.File && window.FileReader && this.files) {
+
 		for (var i = 0, I = this.files.length; i < I; i++) { // multiple
 			var file  = this.files[i];
 			console.log(file);
-			
+
 			if (file && (file.type && file.type.match(/^video*/)		// Checking image ?
 			         || /* !file.type && file.name.match(/\.(jp[eg]+|png|gif|bmp)$/i) && */ $.browser.msie)) {
-					 
-				
+
+
 				var reader = new FileReader();
 				reader.onload = function (file, i) { return function () {
-					
+
 				var fd = new FormData();
 				fd.append('video', file);
 				fd.append('message_id', message_id);
@@ -46,11 +46,11 @@ $.fn.uploadVideos.run = function () {
 		        }).fail(function(data) {
 					$('body').append("fail");
 				});
-				
+
 				}}(file, i);
 				reader.readAsDataURL(file);	// read image data
-				
-				
+
+
 			}
 		}
 	}
@@ -63,4 +63,7 @@ $.fn.uploadVideos.run = function () {
 
 $(function() {
 	$('#video_file').uploadVideos();
+	$('#addvideo').click(function(){
+		$('#video_file').click();
+	});
 });

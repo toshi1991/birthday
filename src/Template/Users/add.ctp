@@ -10,7 +10,8 @@
     </fieldset>
     <?= $this->Form->button('登録') ?>
     <?= $this->Form->end() ?>
-    <div>登録済みの方は
-        <?= $this->Html->link('こちら', ['action' => 'login']); ?>
+
+    <div style="clear: both;">登録済みの方は
+        <?= $this->Html->link('こちら', ['controller' => 'messages', 'action' => 'index']); ?>
     </div>
 </div>

@@ -261,7 +261,7 @@ p.error {
     color: #fff;
     background: #C3232D;
 }
-
+/*
 pre {
     background: none repeat scroll 0% 0% #FFF;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.24);
@@ -269,7 +269,7 @@ pre {
     color: rgba(0, 0 ,0 , 0.74);
     padding:5px;
 }
-
+*/
 .cake-error .cake-stack-trace {
     margin-top:10px;
 }
@@ -377,15 +377,94 @@ pre {
     margin-right: 9px;
 }
 
-.top-bar.expanded .title-area {
+.top_bar {
+    height: 2.8125rem;
+    line-height: 2.8125rem;
+    margin-bottom: 0;
+    background: #ffafaf;
+    position: relative;
+}
+.top_bar:before, .top_bar:after {
+    content: " ";
+    display: table;
+}
+
+.top_bar .title-area {
+    float: left;
+    margin: 0;
+    position: relative;
+}
+
+.top_bar .name {
+    font-size: 16px;
+    margin: 0;
+}
+
+.top_bar ul {
+    list-style-type: none;
+}
+
+.top_bar .name h1 {
+    font-size: 1.0625rem;
+    line-height: 2.8125rem;
+    margin: 0;
+    color: white;
+}
+
+.top_bar .name h1 a {
+    padding: 0 0.9375rem;
+    width: 200px;
+    color: #fff;
+    display: block;
+    font-weight: normal;
+}
+
+.top_bar .title-area {
+    background: #ffafaf;
+    width: auto;
+}
+
+.top_bar, .top_bar,.top_bar-section ul li,.top_bar_section li:not(.has-form) a:not(.button) {
     background: #ffafaf;
 }
 
-.top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
-    background: #ffafaf;
+.top_bar_section {
+    position: relative;
+    width: auto;
+    transition: left 300ms ease-out;
 }
 
-.top-bar-section li:not(.has-form) a:not(.button):hover {
+.top_bar_section ul {
+    font-size: 16px;
+    display: inline;
+    height: auto !important;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.top_bar_section ul li {
+    float: left;
+}
+
+.top_bar_section ul li>a {
+    color: #fff;
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: normal;
+    padding-left: 0.9375rem;
+    padding: 12px 0 12px 0.9375rem;
+    text-transform: none;
+}
+
+.top_bar_section li a:not(.button) {
+    line-height: 2.8125rem;
+    padding: 0 0.9375rem;
+}
+
+.top_bar_section li a:not(.button):hover {
+    line-height: 2.8125rem;
     background-color: #ef6b6b;
     background: #ef6b6b;
 }
@@ -446,7 +525,7 @@ fieldset {
 }
 
 fieldset legend {
-    border-bottom: 2px solid #713B48;
+    border-bottom: 2px solid #ffafaf;
     width: 100%;
     line-height: 2rem;
 }
@@ -545,8 +624,10 @@ div.message.hidden {
 /* Force equal height by overflowing */
 .content,
 #actions-sidebar {
-    margin-bottom: -99999px;
-    padding-bottom: 99999px;
+    min-height: 400px;
+    margin-bottom: 10px;
+/*    margin-bottom: -99999px;
+    padding-bottom: 99999px; */
 }
 @media(max-width: 640px) {
     #actions-sidebar {

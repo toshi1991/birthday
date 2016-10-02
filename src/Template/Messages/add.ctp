@@ -1,5 +1,4 @@
-<div class="messages form large-9 medium-8 columns content">
-  <div class="innercolumns">
+<div class="messages form large-9 medium-8 columns content clearfix">
     <?= $this->Form->create($message) ?>
     <fieldset>
         <legend>メッセージ投稿</legend>
@@ -11,5 +10,4 @@
     </fieldset>
     <?= $this->Form->button('送信') ?>
     <?= $this->Form->end() ?>
-  </div>
 </div>

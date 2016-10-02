@@ -111,7 +111,7 @@ class MessagesController extends AppController
 		$user = $this->Auth->user();
 
         $message = $this->Messages->get($id, [
-            'contain' => ['Images']
+            'contain' => ['Images', 'Movies']
         ]);
 
 		if ($message->user_id != $user['id']) {
@@ -122,15 +122,17 @@ class MessagesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $message = $this->Messages->patchEntity($message, $this->request->data);
             if ($this->Messages->save($message)) {
-                $this->Flash->success('投稿ありがとうございます。');
+                $this->Flash->success('更新しました。');
 
                 return $this->redirect(['action' => 'edit', $id]);
             } else {
                 $this->Flash->error('投稿に失敗しました。再度お試しください。');
             }
         }
+
         $users = $this->Messages->Users->find('list', ['limit' => 200]);
-        $this->set(compact('message', 'users'));
+
+		$this->set(compact('message', 'users'));
         $this->set('_serialize', ['message']);
     }
 
