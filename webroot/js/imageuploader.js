@@ -51,7 +51,8 @@ $.fn.uploadThumbs.run = function (option) {
 			        })
 			        .done(function(data) {
 								var outertag = $('<a>');
-								outertag.attr('href', '/birthday/images/show/' + data);
+								outertag.attr('href', '/birthday/images/show/' + data)
+								.attr('data-lightbox', 'messageImages');
 								var innertag = $('<img>').attr('src', '/birthday/images/show/' + data + '/1');
 								innertag.css('margin-right', '4px');
 								outertag.append(innertag);

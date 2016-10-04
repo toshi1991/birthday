@@ -1,5 +1,7 @@
 <?= $this->Html->script('imageuploader.js'); ?>
 <?= $this->Html->script('videouploader.js'); ?>
+<?= $this->Html->css('lightbox.css'); ?>
+<?= $this->Html->script('lightbox.js'); ?>
 
 <script>
 	var message_id = <?= $message->id; ?>;
@@ -23,7 +25,7 @@
 	<div class="imageArea" style="margin-top: 10px;">
 		<div class="imageList">
 		<?php foreach($message->images as $img): ?>
-			<a href="<?= $this->Url->build(['controller'=>'Images', 'action' => 'show', $img->id]); ?>">
+			<a href="<?= $this->Url->build(['controller'=>'Images', 'action' => 'show', $img->id]); ?>" data-lightbox="messageImages">
 				<img src="<?= $this->Url->build(['controller'=>'Images', 'action' => 'show', $img->id, 1]); ?>" />
 			</a>
 		<?php endforeach; ?>
