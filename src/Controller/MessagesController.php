@@ -70,46 +70,58 @@ class MessagesController extends AppController
 
     /**
      * Add method
-     *
-     * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
+     *	メッセージ投稿画面
+	 *
+     * @return \Cake\Network\Response|void renders view.
      */
     public function add()
     {
+		// Authコンポーネントからユーザー情報取得
 		$user = $this->Auth->user();
-		if (empty($user)) {
-			$this->redirect(['controller' => 'users', 'action' => 'logout']);
-		}
 
-		$user['user_name'] = preg_replace('/GUEST.*/i', $user["user_name"], 'ゲスト');
+		// ゲストユーザーの場合は表示するユーザー名を'ゲスト'に置き換え
+		$user['user_name'] = preg_replace('/GUEST.*/i', 'ゲスト', $user["user_name"]);
 
-        $message = $this->Messages->newEntity();
-        if ($this->request->is('post')) {
+		// 投稿データ作成
+		$message = $this->Messages->newEntity();
+
+		// POSTされた場合は保存処理を行う
+		if ($this->request->is('post')) {
             $message = $this->Messages->patchEntity($message, $this->request->data);
+
+			// ユーザーIDを割り当て
 			$message->user_id = $user['id'];
+
+			// 保存処理
             if ($this->Messages->save($message)) {
+				// 成功時は編集画面へリダイレクト
                 $this->Flash->success('投稿しました。');
                 return $this->redirect(['action' => 'edit', $message->id]);
             } else {
+				// 失敗時はエラー表示
                 $this->Flash->error('投稿に失敗しました。再度お試しください。');
             }
         }
 
+		// Viewへデータを渡す
         $this->set(compact('message', 'user'));
         $this->set('_serialize', ['message']);
     }
 
     /**
      * Edit method
-     *
-     * @param string|null $id Message id.
+     *	メッセージ編集画面
+	 *
+     * @param string $id Message id.
      * @return \Cake\Network\Response|void Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
+    public function edit($id)
     {
 		// checking logged-in
 		$user = $this->Auth->user();
 
+		// 指定されたメッセージを取得
         $message = $this->Messages->get($id, [
             'contain' => ['Images', 'Movies']
         ]);
