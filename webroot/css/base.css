@@ -548,11 +548,16 @@ input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, inpu
   margin-bottom: 4px;
 }
 
-article.message {
+li.message {
     border: solid 1px #ffafaf;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0px 0px 5px 1px #ef6b6b;
+    list-style: none;
+}
+
+li.message:not(:last-child) {
+    margin-bottom: 10px;
 }
 
 .message .user_name {

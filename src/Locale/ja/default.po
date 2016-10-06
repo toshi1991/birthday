@@ -389,3 +389,6 @@ msgstr "投稿したメッセージ"
 #: Template/Users/view.ctp:52
 msgid "User Id"
 msgstr "ユーザーID"
+
+msgid "Password"
+msgstr "パスワード"

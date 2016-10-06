@@ -24,8 +24,8 @@ class UsersController extends AppController
 				]
 			],
 			'logoutRedirect' => [ // ログアウト後に遷移するアクションを指定
-                'controller' => 'Users',
-                'action' => 'mypage',
+                'controller' => 'Messages',
+                'action' => 'index',
             ],
 			'loginAction' => [
 				'controller' => 'users',
