@@ -21,8 +21,7 @@ $.fn.uploadVideos.run = function () {
 			var file  = this.files[i];
 			console.log(file);
 
-			if (file && (file.type && file.type.match(/^video*/)		// Checking image ?
-			         || /* !file.type && file.name.match(/\.(jp[eg]+|png|gif|bmp)$/i) && */ $.browser.msie)) {
+			if (file && (file.type && file.type.match(/^video*/))) {
 
 
 				var reader = new FileReader();
@@ -39,18 +38,31 @@ $.fn.uploadVideos.run = function () {
 		            contentType: false,
 		            dataType: 'json'
 		        }).done(function(data) {
-					// append
-					var tag = '<video poster="/birthday/img/novideo.jpg"><soucer src="/birthday/videos/' + data['filename'] + '"></video>';// alt="'+ file.name +'" title="'+ file.name +' ('+ Math.round( file.size / 1024 ) +'kb)' +'" class="video" />';
-					$('.addVideo').append(tag);
-					console.log(tag);
+					if (data['result'] == 'ok') {
+						// append
+						var tag = '<video poster="/birthday/img/novideo.jpg"><soucer src="/birthday/videos/' + data['filename'] + '"></video>';// alt="'+ file.name +'" title="'+ file.name +' ('+ Math.round( file.size / 1024 ) +'kb)' +'" class="video" />';
+						$('.addVideo').append(tag);
+					} else {
+						// error
+						console.log(data);
+						var errorTag = $('<div>').addClass('message error').click(function(){$(this).addClass('hidden');});
+						errorTag.text(data['error']);
+						$('.container').before(errorTag);
+					}
 		        }).fail(function(data) {
-					$('body').append("fail");
+					var errorTag = $('<div>').addClass('message error').click(function(){$(this).addClass('hidden');});
+					errorTag.text('エラーが発生しました。');
+					$('.container').before(errorTag);
 				});
 
 				}}(file, i);
 				reader.readAsDataURL(file);	// read image data
 
 
+			} else {
+				var errorTag = $('<div>').addClass('message error').click(function(){$(this).addClass('hidden');});
+				errorTag.text('未対応のファイルです。');
+				$('.container').before(errorTag);
 			}
 		}
 	}
