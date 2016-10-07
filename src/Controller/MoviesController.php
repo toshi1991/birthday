@@ -59,20 +59,27 @@ class MoviesController extends AppController
 			$data = $this->request->data;
 			if(!key_exists('video', $data)) {
 				error_log("Video data not found.");
+                error_log(print_r($this->request->data, true));
                 $res["error"] =  'エラーが発生しました。ページをリロードして再度お試しください。';
-				return json_encode($res);
+				echo json_encode($res);
+                return null;
 			}
 
 			$tmp_name = $data['video']["tmp_name"];
-			if (! is_uploaded_file($tmp_name)) {
+			if (! file_exists($tmp_name) || ! is_uploaded_file($tmp_name)) {
 				$res['error'] = "アップロードに失敗しました。";
-				return json_encode($res);
+                echo json_encode($res);
+                return null;
 			}
 
 			$new_name = time() . '_' . $data['video']['name'];
 			if (! move_uploaded_file($tmp_name, "videos/$new_name")) {
+
                 $res['error'] = 'エラーが発生しました。';
-                return json_encode($res);
+                error_log('move_uploaded_file failed.');
+                error_log(print_r($this->request->data, true));
+                echo json_encode($res);
+                return null;
             }
 
             $movie = $this->Movies->patchEntity($movie, $this->request->data);
@@ -80,13 +87,16 @@ class MoviesController extends AppController
             if ($this->Movies->save($movie)) {
                 $res['result'] = 'ok';
 				$res['filename'] = $new_name;
-                return json_encode($res);
+                echo json_encode($res);
+                return null;
             } else {
 				$res['error'] = "動画の追加に失敗しました。再度お試しください。";
-				return json_encode($res);
+                echo json_encode($res);
+                return null;
 			}
 			error_log(print_r($movie, true));
-			return json_encode($res);
+            echo json_encode($res);
+            return null;
         }
         $messages = $this->Movies->Messages->find('list', ['limit' => 200]);
         $this->set(compact('movie', 'messages'));

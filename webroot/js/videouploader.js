@@ -22,7 +22,13 @@ $.fn.uploadVideos.run = function () {
 			console.log(file);
 
 			if (file && (file.type && file.type.match(/^video*/))) {
-
+				if (file.size > max_size) {
+					var errorTag = $('<div>').addClass('message error').click(function(){$(this).addClass('hidden');});
+					errorTag.text('ファイルサイズが大きすぎます。');
+					this.value = "";
+					$('.container').before(errorTag);
+					return ;
+				}
 
 				var reader = new FileReader();
 				reader.onload = function (file, i) { return function () {
@@ -41,7 +47,7 @@ $.fn.uploadVideos.run = function () {
 					if (data['result'] == 'ok') {
 						// append
 						var tag = '<video poster="/birthday/img/novideo.jpg"><soucer src="/birthday/videos/' + data['filename'] + '"></video>';// alt="'+ file.name +'" title="'+ file.name +' ('+ Math.round( file.size / 1024 ) +'kb)' +'" class="video" />';
-						$('.addVideo').append(tag);
+						$('.videoArea').prepend(tag);
 					} else {
 						// error
 						console.log(data);
@@ -51,7 +57,7 @@ $.fn.uploadVideos.run = function () {
 					}
 		        }).fail(function(data) {
 					var errorTag = $('<div>').addClass('message error').click(function(){$(this).addClass('hidden');});
-					errorTag.text('エラーが発生しました。');
+					errorTag.text(data['error'] ? data['error'] : 'エラーが発生しました。');
 					$('.container').before(errorTag);
 				});
 
