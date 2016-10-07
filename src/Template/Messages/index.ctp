@@ -19,7 +19,7 @@
     <?php if(count($messages) == 0): ?>
         メッセージはまだありません。-><?= $this->Html->link('投稿する', ['action' => 'add']); ?>
     <?php endif; ?>
-    <?php if($this->Paginator->param('count') > 1): ?>
+    <?php if($this->Paginator->param('pageCount') > 1): ?>
         <div class="paginator">
             <ul class="pagination">
                 <?= $this->Paginator->prev('< ' . __('previous')) ?>
