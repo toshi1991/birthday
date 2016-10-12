@@ -25,7 +25,7 @@ $.fn.uploadThumbs.run = function (option) {
 
 	// Checking HTML5 ? (File API exist?)
 	if (window.File && window.FileReader && this.files) {
-
+		var ajax_cnt = 0;
 		for (var i = 0, I = this.files.length; i < I; i++) { // multiple
 			var file  = this.files[i];
 			if (file && (file.type && file.type.match(/^image/)		// Checking image ?
@@ -41,6 +41,17 @@ $.fn.uploadThumbs.run = function (option) {
 					fd.append('image', file);
 					fd.append('message_id', message_id);
 					console.log(file);
+
+					// show overlay
+					if($(".overlay").length == 0) {
+						var overlay = $("<div>").addClass('overlay').hide();
+						$("body").prepend(overlay);
+						console.log("test");
+					}
+					$(".overlay").fadeIn();
+
+					ajax_cnt++;
+
 			        $.ajax({
 			            url: '/birthday/images/add',
 			            type: 'POST',
@@ -50,19 +61,24 @@ $.fn.uploadThumbs.run = function (option) {
 			            dataType: 'json'
 			        })
 			        .done(function(data) {
-								var outertag = $('<a>');
-								outertag.attr('href', '/birthday/images/show/' + data)
-								.attr('data-lightbox', 'messageImages');
-								var innertag = $('<img>').attr('src', '/birthday/images/show/' + data + '/1');
-								innertag.css('margin-right', '4px');
-								outertag.append(innertag);
-								outertag.hide();
-								//outertag.hide();
-								$('#addimage').fadeOut(200,function(){
-									$('#addimage').before(outertag);
-									outertag.fadeIn(1000);
-									$('#addimage').fadeIn();
-								});
+						var outertag = $('<a>');
+						outertag.attr('href', '/birthday/images/show/' + data)
+						.attr('data-lightbox', 'messageImages');
+						var innertag = $('<img>').attr('src', '/birthday/images/show/' + data + '/1');
+						innertag.css('margin-right', '4px');
+						outertag.append(innertag);
+						outertag.hide();
+						//outertag.hide();
+						$('#addimage').fadeOut(200,function(){
+							$('#addimage').before(outertag);
+							outertag.fadeIn(1000);
+							$('#addimage').fadeIn();
+						});
+
+						ajax_cnt--;
+						if (ajax_cnt == 0) {
+							$('.overlay').fadeOut();
+						}
 			      	});
 				}}(file, i);
 				reader.readAsDataURL(file);	// read image data
