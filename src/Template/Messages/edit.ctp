@@ -49,7 +49,7 @@
 				<img src="<?= $this->Url->build(['controller'=>'Images', 'action' => 'show', $img->id, 1]); ?>" />
 			</a>
 		<?php endforeach; ?>
-			<img src="/birthday/img/noimage.png" id="addimage" />
+			<img src="<?= $this->request->webroot; ?>img/noimage.png" id="addimage" />
 		</div>
 		<?= $this->Form->create(null, ['id' => 'imageuploader']) ?>
 			<input id="file" type="file" multiple accept="image/jpeg, image/gif, image/png">
