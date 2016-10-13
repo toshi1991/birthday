@@ -161,6 +161,7 @@ class UsersController extends AppController
 					return $this->redirect(['controller' => 'messages', 'action' => 'add']);
 				} else {
 						$this->log('Auth failed.', 'error');
+						$this->log(print_r($this->request->data, true), 'error');
 						$this->log(print_r($user, true), 'error');
 				}
 			} else {
