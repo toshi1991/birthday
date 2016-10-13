@@ -86,7 +86,7 @@ class UsersController extends AppController
 				if ($user) {
 					$this->Auth->setUser($user);
 				}
-				$this->Flash->error('登録完了しました。');
+				$this->Flash->success('登録完了しました。');
                 return $this->redirect(['controller' => 'messages', 'action' => 'add']);
             } else {
                 $this->Flash->error('登録に失敗しました。再度お試しください。');
@@ -160,7 +160,8 @@ class UsersController extends AppController
 					//return $this->redirect($this->Auth->redirectUrl());
 					return $this->redirect(['controller' => 'messages', 'action' => 'add']);
 				} else {
-						$this->log('Auth failed.', 'error');
+						$this->log('Guest Auth failed.', 'error');
+						$this->log(print_r($this->request, true), 'error');
 						$this->log(print_r($user, true), 'error');
 				}
 			} else {
