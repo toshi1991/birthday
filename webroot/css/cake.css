@@ -382,7 +382,7 @@ pre {
     line-height: 2.8125rem;
     margin-bottom: 0;
     background: #ffafaf;
-    position: relative;
+    /* position: relative; */
 }
 .top_bar:before, .top_bar:after {
     content: " ";

@@ -619,6 +619,15 @@ video {
     max-width: 100%;
 }
 
+.top_bar {
+    position: fixed;
+    width: 100%;
+}
+
+.container {
+    padding-top: 50px;
+}
+
 @media screen and (max-width: 640px) {
     .content {
         border: none;
