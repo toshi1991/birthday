@@ -618,3 +618,15 @@ li.message:not(:last-child) {
 video {
     max-width: 100%;
 }
+
+@media screen and (max-width: 640px) {
+    .content {
+        border: none;
+    }
+}
+
+@media screen and (max-width: 342px) {
+    .top_bar .title-area {
+        display: none;
+    }
+}
