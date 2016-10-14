@@ -16,6 +16,7 @@ $.fn.uploadVideos.run = function () {
 
 	// Checking HTML5 ? (File API exist?)
 	if (window.File && window.FileReader && this.files) {
+		var ajax_cnt = 0;
 
 		for (var i = 0, I = this.files.length; i < I; i++) { // multiple
 			var file  = this.files[i];
@@ -36,6 +37,16 @@ $.fn.uploadVideos.run = function () {
 				var fd = new FormData();
 				fd.append('video', file);
 				fd.append('message_id', message_id);
+
+				// show overlay
+				if($(".overlay").length == 0) {
+					var overlay = $("<div>").addClass('overlay').hide();
+					$("body").prepend(overlay);
+				}
+				$(".overlay").fadeIn();
+
+				ajax_cnt++;
+
 		        $.ajax({
 		            url: '/birthday/movies/add',
 		            type: 'POST',
@@ -55,10 +66,18 @@ $.fn.uploadVideos.run = function () {
 						errorTag.text(data['error']);
 						$('.container').before(errorTag);
 					}
+					ajax_cnt--;
+					if (ajax_cnt == 0) {
+						$('.overlay').fadeOut();
+					}
 		        }).fail(function(data) {
 					var errorTag = $('<div>').addClass('message error').click(function(){$(this).addClass('hidden');});
 					errorTag.text(data['error'] ? data['error'] : 'エラーが発生しました。');
 					$('.container').before(errorTag);
+					ajax_cnt--;
+					if (ajax_cnt == 0) {
+						$('.overlay').fadeOut();
+					}
 				});
 
 				}}(file, i);

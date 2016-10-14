@@ -46,7 +46,6 @@ $.fn.uploadThumbs.run = function (option) {
 					if($(".overlay").length == 0) {
 						var overlay = $("<div>").addClass('overlay').hide();
 						$("body").prepend(overlay);
-						console.log("test");
 					}
 					$(".overlay").fadeIn();
 
@@ -79,7 +78,17 @@ $.fn.uploadThumbs.run = function (option) {
 						if (ajax_cnt == 0) {
 							$('.overlay').fadeOut();
 						}
-			      	});
+			      	})
+					.fail(function() {
+						var errorTag = $('<div>').addClass('message error').click(function(){$(this).addClass('hidden');});
+						errorTag.text('エラーが発生しました。');
+						this.value = "";
+						$('.container').before(errorTag);
+						ajax_cnt--;
+						if (ajax_cnt == 0) {
+							$('.overlay').fadeOut();
+						}
+					});
 				}}(file, i);
 				reader.readAsDataURL(file);	// read image data
 
