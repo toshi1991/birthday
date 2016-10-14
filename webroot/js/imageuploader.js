@@ -52,7 +52,7 @@ $.fn.uploadThumbs.run = function (option) {
 					ajax_cnt++;
 
 			        $.ajax({
-			            url: '/birthday/images/add',
+			            url: root_url + 'images/add',
 			            type: 'POST',
 			            data: fd,
 			            processData: false,
@@ -61,9 +61,9 @@ $.fn.uploadThumbs.run = function (option) {
 			        })
 			        .done(function(data) {
 						var outertag = $('<a>');
-						outertag.attr('href', '/birthday/images/show/' + data)
+						outertag.attr('href', root_url + 'images/show/' + data)
 						.attr('data-lightbox', 'messageImages');
-						var innertag = $('<img>').attr('src', '/birthday/images/show/' + data + '/1');
+						var innertag = $('<img>').attr('src', root_url + 'images/show/' + data + '/1');
 						innertag.css('margin-right', '4px');
 						outertag.append(innertag);
 						outertag.hide();

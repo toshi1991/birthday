@@ -37,6 +37,9 @@ $cakeDescription = 'バースデーメッセージ';
     <?= $this->fetch('script') ?>
 </head>
 <body>
+    <script>
+        var root_url = '<?= $this->request->webroot; ?>';
+    </script>
     <nav class="top_bar" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">

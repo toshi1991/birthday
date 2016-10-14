@@ -48,7 +48,7 @@ $.fn.uploadVideos.run = function () {
 				ajax_cnt++;
 
 		        $.ajax({
-		            url: '/birthday/movies/add',
+		            url: root_url + 'movies/add',
 		            type: 'POST',
 		            data: fd,
 		            processData: false,
@@ -57,7 +57,7 @@ $.fn.uploadVideos.run = function () {
 		        }).done(function(data) {
 					if (data['result'] == 'ok') {
 						// append
-						var tag = '<video poster="/birthday/img/novideo.jpg"><soucer src="/birthday/videos/' + data['filename'] + '"></video>';// alt="'+ file.name +'" title="'+ file.name +' ('+ Math.round( file.size / 1024 ) +'kb)' +'" class="video" />';
+						var tag = '<video poster="' + root_url + 'img/novideo.jpg"><soucer src="' + root_url + 'videos/' + data['filename'] + '"></video>';// alt="'+ file.name +'" title="'+ file.name +' ('+ Math.round( file.size / 1024 ) +'kb)' +'" class="video" />';
 						$('.videoArea').prepend(tag);
 					} else {
 						// error
