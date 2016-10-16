@@ -88,9 +88,38 @@ class ImagesController extends AppController
 				exit();
 			}
 
+            $original_image = $this->imagecreatefromfile($tmp_name);
+            $rotate_flg = false;
+
+            // 向き修正
+            $exif_datas = @exif_read_data($tmp_name);
+            if (isset($exif_datas['Orientation'])) {
+                $orientation = $exif_datas['Orientation'];
+                if($orientation == 6) { // 時計回りに90
+                    $original_image = imagerotate($original_image, 270, 0, 0);
+                    $rotate_flg = true;
+                } else if ($orientation == 8) { // 反時計回りに90
+                    $original_image = imagerotate($original_image, 90, 0, 0);
+                    $rotate_flg = true;
+                }
+
+                if ($rotate_flg) {
+                    ImageJpeg($original_image, $tmp_name);
+                }
+                $this->log('orientation:'.$orientation, 'debug');
+            } else {
+                $this->log('orientation: none', 'debug');
+                $this->log(print_r($exif_datas, true), 'debug');
+            }
+
 			// Create thumbnail
 			$new_width = 200;
-			list($image_w, $image_h) = getimagesize($tmp_name);
+            /*if ($rotate_flg) {
+                list($image_h, $image_w) = getimagesize($tmp_name);
+            } else {*/
+                list($image_w, $image_h) = getimagesize($tmp_name);
+            //}
+
 			$proportion = $image_w / $image_h;
 			$new_height = $new_width / $proportion;
 
@@ -100,7 +129,7 @@ class ImagesController extends AppController
 			}
 
 			$canvas = imagecreatetruecolor($new_width, $new_height);
-			$original_image = $this->imagecreatefromfile($tmp_name);
+
 			imagecopyresampled($canvas,  // 背景画像
 				 $original_image,   // コピー元画像
 				 0,        // 背景画像の x 座標
@@ -117,6 +146,7 @@ class ImagesController extends AppController
 				null,    // 出力するファイル名（省略すると画面に表示する）
 				100                // 画像精度（この例だと100%で作成）
 			);
+
 			$image->thumb = ob_get_clean();
 
 			$image->data = file_get_contents($tmp_name);
