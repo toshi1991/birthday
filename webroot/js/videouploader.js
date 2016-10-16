@@ -57,7 +57,7 @@ $.fn.uploadVideos.run = function () {
 		        }).done(function(data) {
 					if (data['result'] == 'ok') {
 						// append
-						var tag = '<video poster="' + root_url + 'img/novideo.jpg"><souce src="' + root_url + 'videos/' + data['filename'] + '" /></video>';// alt="'+ file.name +'" title="'+ file.name +' ('+ Math.round( file.size / 1024 ) +'kb)' +'" class="video" />';
+						var tag = '<video poster="' + root_url + 'img/novideo.jpg"><source src="' + root_url + 'videos/' + data['filename'] + '"></video>';// alt="'+ file.name +'" title="'+ file.name +' ('+ Math.round( file.size / 1024 ) +'kb)' +'" class="video" />';
 						$('.videoArea').prepend(tag);
 					} else {
 						// error
