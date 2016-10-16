@@ -76,8 +76,8 @@ class MoviesController extends AppController
 			if (! move_uploaded_file($tmp_name, "videos/$new_name")) {
 
                 $res['error'] = 'エラーが発生しました。';
-                error_log('move_uploaded_file failed.');
-                error_log(print_r($this->request->data, true));
+                $this->log('move_uploaded_file failed.', 'error');
+                $this->log(print_r($this->request->data, true), 'error');
                 echo json_encode($res);
                 return null;
             }
