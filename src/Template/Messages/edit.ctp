@@ -29,6 +29,11 @@
 
 
 <div class="messages form large-9 medium-8 columns content clearfix">
+	<p class="small_mes">
+		メッセージの投稿ありがとうございます！<br />
+		この画面ではメッセージの修正や画像・動画の追加ができます。<br />
+		終了の際はそのままページを閉じてください。
+	</p>
 	<div class="clearfix">
     <?= $this->Form->create($message) ?>
     <fieldset>

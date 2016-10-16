@@ -54,9 +54,10 @@ $cakeDescription = 'バースデーメッセージ';
                 <li><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>
                 <li><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li>
 */ ?>
-            <li>
+<?php /*            <li>
                 <?= $this->Html->link('logout', ['controller'=>'users', 'action'=>'logout']);?>
             </li>
+            */ ?>
             </ul>
         </div>
     </nav>
