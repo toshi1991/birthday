@@ -34,6 +34,7 @@
     <fieldset>
         <legend>メッセージ編集</legend>
         <?php
+			echo $this->Form->input('name');
             // echo $this->Form->input('user_id', ['options' => $users]);
             echo $this->Form->input('comment');
         ?>
@@ -57,6 +58,10 @@
 		<?= $this->Form->create(null, ['id' => 'videouploader']) ?>
 			<input id="video_file" type="file" multiple accept="video/*">
 		<?= $this->Form->end(); ?>
+		<p class="notices">
+			*画像のサイズが大きすぎると投稿できない可能性があります。<br />
+			*一度投稿した画像は削除できません。
+		</p>
 	</div>
 	<div class="videoArea">
 		<?php foreach($message->movies as $movie): ?>
@@ -65,12 +70,16 @@
 			</video>
 		<?php endforeach; ?>
 		<img src="<?= $this->request->webroot; ?>img/nomovie.png" id="addvideo" />
+		<p class="notices">
+			*動画が長すぎると投稿できない場合があります。(目安: 10秒程度)<br />
+			*サイズの大きい動画を投稿したい場合は、お手数ですが、youtube等の別のサイトに投稿して動画のアドレスをメッセージに貼り付けてください。
+		</p>
 	</div>
 	<span id="del_link">
 		<?= $this->Form->postLink(
 			'メッセージを削除',
 			['action' => 'delete', $message->id],
-			['confirm' => '本当に削除しますか？']
+			['confirm' => '削除すると元に戻せません。本当に削除しますか？']
 		)
 		?>
 	</span>

@@ -629,6 +629,14 @@ video {
     padding-top: 50px;
 }
 
+.notices {
+    font-size: 10px;
+}
+
+.clearfix {
+    clear: both;
+}
+
 @media screen and (max-width: 640px) {
     .content {
         border: none;

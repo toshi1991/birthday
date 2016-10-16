@@ -20,7 +20,7 @@ class MessagesController extends AppController
 		$this->loadComponent('Auth',[
 			'loginAction' => [
 				'controller' => 'users',
-				'action' => 'login'
+				'action' => 'add'
 			]
 		]);
 	}

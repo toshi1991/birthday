@@ -543,6 +543,7 @@ fieldset legend {
 
 button {
     background: #ffafaf;
+    border-radius: 5px;
 }
 
 div.message {
@@ -657,4 +658,8 @@ div.message.hidden {
     margin-top: 20px;
     margin-bottom: 10px;
     border-bottom: 0px;
+}
+
+.small_mes {
+    font-size: 14px;
 }

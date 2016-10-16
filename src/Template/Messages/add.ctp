@@ -10,4 +10,5 @@
     </fieldset>
     <?= $this->Form->button('送信') ?>
     <?= $this->Form->end() ?>
+    <p class="notices clearfix">*メッセージ送信後に画像や動画を追加できます。<br />*メッセージは空欄でも大丈夫です。<br />*他の人にメッセージが見られることはありません。</p>
 </div>
