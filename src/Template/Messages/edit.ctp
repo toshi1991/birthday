@@ -71,6 +71,8 @@
 		<?php endforeach; ?>
 		<img src="<?= $this->request->webroot; ?>img/nomovie.png" id="addvideo" />
 		<p class="notices">
+			*Wi-fi環境での追加をオススメします。<br />
+			*通信環境によっては1分以上かかる場合がございます。<br />
 			*動画が長すぎると投稿できない場合があります。(目安: 10秒程度)<br />
 			*サイズの大きい動画を投稿したい場合は、お手数ですが、youtube等の別のサイトに投稿して動画のアドレスをメッセージに貼り付けてください。
 		</p>
