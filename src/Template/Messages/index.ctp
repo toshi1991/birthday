@@ -4,7 +4,7 @@
     <?php foreach ($messages as $message): ?>
         <li class="message">
             <section class="user_name">
-                From: <?= h($message->name) ?>
+                <?= $this->Html->link('From: ' . h($message->name), ['action' => 'view', $message->id]); ?>
             </section>
             <section class="comment">
                 <pre><?= h($message->comment); ?></pre>

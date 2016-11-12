@@ -31,6 +31,6 @@
     <?= $this->Form->end() ?>
 
     <div style="clear: both;">登録済みの方は
-        <?= $this->Html->link('こちら', ['controller' => 'messages', 'action' => 'index']); ?>
+        <?= $this->Html->link('こちら', ['controller' => 'users', 'action' => 'login']); ?>
     </div>
 </div>
