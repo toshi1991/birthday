@@ -37,6 +37,7 @@ $cakeDescription = 'バースデーメッセージ';
     <?= $this->fetch('script') ?>
 </head>
 <body>
+    <?= $this->element('analytics'); ?>
     <script>
         var root_url = '<?= $this->request->webroot; ?>';
     </script>
